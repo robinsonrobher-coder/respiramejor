@@ -13,5 +13,12 @@
     <xhtml:link rel="alternate" hreflang="es-MX" href="https://atmen.mx/sobre-el-doctor/"/>
     <xhtml:link rel="alternate" hreflang="x-default" href="https://atmen.mx/sobre-el-doctor/"/>
   </url>
-  <!-- /aviso-de-privacidad/ es noindex, no se incluye en el sitemap. -->
+  <url>
+    <loc>https://atmen.mx/preguntas-frecuentes/</loc>
+    <lastmod>2026-05-03</lastmod>
+    <xhtml:link rel="alternate" hreflang="es-MX" href="https://atmen.mx/preguntas-frecuentes/"/>
+    <xhtml:link rel="alternate" hreflang="x-default" href="https://atmen.mx/preguntas-frecuentes/"/>
+  </url>
+  <!-- /aviso-de-privacidad/ es noindex, /informacion-regulatoria/ es noindex,
+       /contacto/ es noindex,nofollow — los tres quedan fuera del sitemap. -->
 </urlset>
