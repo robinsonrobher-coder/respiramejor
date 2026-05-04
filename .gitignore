@@ -1,0 +1,33 @@
+# Editores y SO
+.DS_Store
+Thumbs.db
+desktop.ini
+*.swp
+*.swo
+.vscode/
+.idea/
+
+# Backups
+*~
+*.bak
+*.orig
+
+# Logs
+*.log
+npm-debug.log*
+
+# Build artifacts (si se introduce build step en el futuro)
+node_modules/
+dist/
+.cache/
+
+# Datos sensibles / borradores
+_internal/
+_drafts/
+.env
+.env.local
+*.local
+
+# Claude Code
+.claude/scripts/
+.claude/skills/

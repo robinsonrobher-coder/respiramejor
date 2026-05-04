@@ -1,0 +1,36 @@
+#!/usr/bin/env bash
+# .githooks/pre-commit
+# Rechaza commits con mojibake UTF-8/Win-1252.
+# Activar una vez con: git config core.hooksPath .githooks
+
+set -e
+
+PATTERN='Ã[©³­±¡ºü‰"]|â€'
+
+files=$(git diff --cached --name-only --diff-filter=ACMR | \
+        grep -Ei '\.(html|css|js|json|xml|txt|md|svg|webmanifest)$' || true)
+
+if [ -z "$files" ]; then
+  exit 0
+fi
+
+found=0
+for f in $files; do
+  if [ -f "$f" ]; then
+    if LC_ALL=C grep -lE "$PATTERN" "$f" > /dev/null 2>&1; then
+      echo "Mojibake detectado en: $f"
+      LC_ALL=C grep -nE "$PATTERN" "$f" | head -5
+      found=1
+    fi
+  fi
+done
+
+if [ $found -eq 1 ]; then
+  echo ""
+  echo "Archivos con secuencias UTF-8 mal codificadas a Win-1252."
+  echo "Reabrir con encoding UTF-8 (no Win-1252) y re-guardar."
+  echo "Bypass (NO recomendado): git commit --no-verify"
+  exit 1
+fi
+
+exit 0
