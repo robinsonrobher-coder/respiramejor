@@ -1,0 +1,66 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Dr. Robinson Robles, Neumólogo">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#caf0f8"/>
+      <stop offset="55%"  stop-color="#90e0ef"/>
+      <stop offset="100%" stop-color="#95d5b2"/>
+    </linearGradient>
+    <radialGradient id="halo" cx="35%" cy="32%" r="55%">
+      <stop offset="0%"  stop-color="#00b4d8" stop-opacity=".55"/>
+      <stop offset="55%" stop-color="#00b4d8" stop-opacity="0"/>
+    </radialGradient>
+    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#ffffff"/>
+      <stop offset="100%" stop-color="#e6eef5"/>
+    </linearGradient>
+    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#e8c4a0"/>
+      <stop offset="100%" stop-color="#cfa07a"/>
+    </linearGradient>
+  </defs>
+
+  <!-- Frame fondo -->
+  <rect width="400" height="500" fill="url(#bg)"/>
+  <rect width="400" height="500" fill="url(#halo)"/>
+
+  <!-- Hombros / bata -->
+  <path d="M40 500 V410 C40 360 110 330 200 330 C290 330 360 360 360 410 V500 Z" fill="url(#coat)"/>
+  <!-- Solapa izquierda -->
+  <path d="M170 330 L200 380 L170 460 L150 410 Z" fill="#dbe4ec" opacity=".9"/>
+  <!-- Solapa derecha -->
+  <path d="M230 330 L200 380 L230 460 L250 410 Z" fill="#dbe4ec" opacity=".9"/>
+  <!-- Stethoscope -->
+  <path d="M150 360 Q200 420 250 360" stroke="#0077b6" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
+  <circle cx="252" cy="360" r="9" fill="#0077b6" opacity=".85"/>
+
+  <!-- Cuello -->
+  <rect x="180" y="285" width="40" height="60" rx="10" fill="url(#skin)"/>
+
+  <!-- Cabeza -->
+  <ellipse cx="200" cy="220" rx="78" ry="92" fill="url(#skin)"/>
+  <!-- Cabello -->
+  <path d="M122 200 C122 145 160 115 200 115 C240 115 278 145 278 200 C278 168 252 152 220 152 C188 152 145 165 132 195 Z" fill="#2b2018"/>
+  <!-- Ojos azules (guiño a la paleta) -->
+  <ellipse cx="172" cy="220" rx="9" ry="6" fill="#ffffff"/>
+  <ellipse cx="228" cy="220" rx="9" ry="6" fill="#ffffff"/>
+  <circle cx="172" cy="221" r="4" fill="#0096c7"/>
+  <circle cx="228" cy="221" r="4" fill="#0096c7"/>
+  <circle cx="173" cy="220" r="1.4" fill="#001533"/>
+  <circle cx="229" cy="220" r="1.4" fill="#001533"/>
+  <!-- Cejas -->
+  <rect x="160" y="204" width="24" height="3" rx="1.5" fill="#2b2018"/>
+  <rect x="216" y="204" width="24" height="3" rx="1.5" fill="#2b2018"/>
+  <!-- Nariz -->
+  <path d="M198 230 Q200 250 196 260 Q200 264 204 260" stroke="#a07955" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
+  <!-- Boca -->
+  <path d="M186 280 Q200 290 214 280" stroke="#7a3a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+
+  <!-- Pin INER (ID) -->
+  <rect x="128" y="384" width="34" height="14" rx="3" fill="#0077b6" opacity=".9"/>
+  <text x="145" y="394" font-family="system-ui, sans-serif" font-size="8" font-weight="700"
+        fill="#ffffff" text-anchor="middle">INER</text>
+
+  <!-- Marca de placeholder (sutil para producción no confundir) -->
+  <text x="200" y="492" font-family="system-ui, sans-serif" font-size="9"
+        fill="#0a2540" opacity=".35" text-anchor="middle">Foto definitiva pendiente</text>
+</svg>

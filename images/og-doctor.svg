@@ -1,0 +1,19 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 630" width="1200" height="630" role="img" aria-label="Dr. Robinson Robles, Neumólogo CDMX">
+  <defs>
+    <linearGradient id="bg2" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#0077b6"/>
+      <stop offset="100%" stop-color="#06a77d"/>
+    </linearGradient>
+  </defs>
+  <rect width="1200" height="630" fill="url(#bg2)"/>
+  <text x="80" y="200" font-family="Plus Jakarta Sans, system-ui, sans-serif"
+        font-size="56" font-weight="800" fill="#ffffff" letter-spacing="-2">Dr. Robinson Robles</text>
+  <text x="80" y="270" font-family="Plus Jakarta Sans, system-ui, sans-serif"
+        font-size="38" font-weight="600" fill="#caf0f8" letter-spacing="-1">Neumólogo · Investigador INER · Médica Sur</text>
+
+  <text x="80" y="370" font-family="Plus Jakarta Sans" font-size="24" fill="#ffffff" opacity=".9">Cédula Profesional 10431658 · Especialidad 12440475</text>
+  <text x="80" y="410" font-family="Plus Jakarta Sans" font-size="24" fill="#ffffff" opacity=".9">Consejo Nacional de Neumología, folio 1509 (vigente 2031)</text>
+
+  <text x="80" y="510" font-family="Plus Jakarta Sans" font-size="20" fill="#caf0f8">Maestría en EPOC · Universidad Católica de Murcia</text>
+  <text x="80" y="540" font-family="Plus Jakarta Sans" font-size="20" fill="#caf0f8">Miembro de ALAT · ERS · SMNyCT · SEPAR</text>
+</svg>
