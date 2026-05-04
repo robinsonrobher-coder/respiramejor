@@ -31,3 +31,4 @@ _drafts/
 # Claude Code
 .claude/scripts/
 .claude/skills/
+.claude/settings.local.json

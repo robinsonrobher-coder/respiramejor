@@ -40,14 +40,14 @@
   <meta name="twitter:image" content="https://atmen.mx/images/og-doctor.svg">
   <meta name="twitter:image:alt" content="Dr. Robinson Robles, neumólogo CDMX">
 
-  <link rel="icon" type="image/svg+xml" href="/images/favicon.svg">
-  <link rel="apple-touch-icon" href="/images/favicon.svg">
-  <link rel="manifest" href="/manifest.webmanifest">
+  <link rel="icon" type="image/svg+xml" href="../images/favicon.svg">
+  <link rel="apple-touch-icon" href="../images/favicon.svg">
+  <link rel="manifest" href="../manifest.webmanifest">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="preload" as="image" href="/images/doctor-portrait.svg" type="image/svg+xml" fetchpriority="high">
+  <link rel="preload" as="image" href="../images/doctor-portrait.svg" type="image/svg+xml" fetchpriority="high">
 
   <script type="application/ld+json">
   {
@@ -177,8 +177,9 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Fraunces:ital,wght@1,500;1,600&display=swap">
   </noscript>
 
-  <link rel="stylesheet" href="/css/tokens.css">
-  <link rel="stylesheet" href="/css/site.css">
+  <link rel="stylesheet" href="../css/tokens.css">
+  <link rel="stylesheet" href="../css/site.css">
+  <link rel="stylesheet" href="../css/premium.css">
 </head>
 <body>
   <script>document.body.classList.add('js-enabled');</script>
@@ -197,7 +198,7 @@
 
   <nav class="navbar" id="mainNav" aria-label="Navegación principal">
     <div class="navbar__container">
-      <a href="/" class="navbar__brand" aria-label="Atmen — Inicio">
+      <a href="../index.html" class="navbar__brand" aria-label="Atmen — Inicio">
         <span class="navbar__brand-mark" aria-hidden="true">
           <svg viewBox="0 0 24 24" width="20" height="20" fill="currentColor"><path d="M11 5h2l4 14h-3l-1-4h-4l-1 4H5z M11.6 12h.8L12 8.5z"/></svg>
         </span>
@@ -212,9 +213,9 @@
         <span class="bar" aria-hidden="true"></span>
       </button>
       <ul class="navbar__menu" id="navMenu">
-        <li><a href="/" >Inicio</a></li>
-        <li><a href="/sobre-el-doctor/" aria-current="page">Sobre el doctor</a></li>
-        <li><a href="/#contacto">Contacto</a></li>
+        <li><a href="../index.html" >Inicio</a></li>
+        <li><a href="../sobre-el-doctor/index.html" aria-current="page">Sobre el doctor</a></li>
+        <li><a href="../index.html#contacto">Contacto</a></li>
         <li>
           <a class="btn btn--primary navbar__cta"
              href="https://wa.me/5215614838970?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20de%20neumolog%C3%ADa.">
@@ -235,41 +236,41 @@
 
   <main id="main">
 
-    <!-- ===== HERO biográfico ===== -->
-    <section class="hero">
-      <div class="hero__container">
-        <div class="hero__copy">
-          <nav aria-label="Breadcrumb" style="margin-bottom: var(--sp-3);">
+    <!-- ===== HERO PRO biográfico ===== -->
+    <section class="hero-pro">
+      <div class="hero-pro__container">
+        <div class="hero-pro__copy">
+          <nav aria-label="Breadcrumb" style="margin-bottom: 14px;">
             <ol style="list-style: none; padding: 0; margin: 0; display: flex; gap: 8px; font-size: .85rem; color: var(--ink-muted);">
-              <li><a href="/" style="color: inherit;">Inicio</a></li>
+              <li><a href="../index.html" style="color: inherit;">Inicio</a></li>
               <li aria-hidden="true">›</li>
               <li><span style="color: var(--ink);">Sobre el doctor</span></li>
             </ol>
           </nav>
 
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Investigador clínico</span>
-          <h1 class="hero__headline">Dr. Robinson <em>Robles.</em></h1>
-          <p class="hero__lead">
-            Neumólogo egresado del INER-UNAM, maestro en EPOC por la Universidad Católica de Murcia y maestro en ciencias. Adscrito a la <strong>Clínica de Tabaquismo y EPOC del INER</strong> y consulta privada en <strong>Médica Sur</strong>.
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Investigador clínico · INER + Médica Sur</span>
+          <h1 class="headline-pro">Dr. Robinson<br><em>Robles.</em></h1>
+          <p class="lead-pro">
+            Neumólogo egresado del <strong>INER-UNAM</strong>, maestro en EPOC por la Universidad Católica de Murcia y maestro en ciencias. Adscrito a la Clínica de Tabaquismo y EPOC del INER y consulta privada en Médica Sur.
           </p>
 
-          <div class="hero__stats" role="list">
-            <div class="stat" role="listitem">
-              <span class="stat__num">h&#8209;7</span>
-              <span class="stat__label">Scholar h-index</span>
+          <div class="stats-row" role="list">
+            <div role="listitem">
+              <span class="stat-pro__num">h&#8209;7</span>
+              <span class="stat-pro__label">Scholar h-index</span>
             </div>
-            <div class="stat" role="listitem">
-              <span class="stat__num">143</span>
-              <span class="stat__label">Citas indexadas</span>
+            <div role="listitem">
+              <span class="stat-pro__num">143</span>
+              <span class="stat-pro__label">Citas indexadas</span>
             </div>
-            <div class="stat" role="listitem">
-              <span class="stat__num">10+</span>
-              <span class="stat__label">Publicaciones revisadas por pares</span>
+            <div role="listitem">
+              <span class="stat-pro__num">10+</span>
+              <span class="stat-pro__label">Publicaciones por pares</span>
             </div>
           </div>
 
           <div class="hero__cta">
-            <a class="btn btn--whatsapp btn--lg"
+            <a class="btn btn--whatsapp btn--lg btn-pro"
                href="https://wa.me/5215614838970?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20de%20neumolog%C3%ADa.">
               Agendar consulta
             </a>
@@ -277,20 +278,23 @@
           </div>
         </div>
 
-        <div class="hero__visual">
-          <div class="portrait-frame">
-            <div class="portrait-frame__halo" aria-hidden="true"></div>
-            <img class="portrait-svg"
-                 src="/images/doctor-portrait.svg"
-                 alt="Dr. Robinson Robles, neumólogo, retrato profesional placeholder"
-                 width="400" height="500"
-                 fetchpriority="high"
-                 decoding="async">
-            <div class="portrait-frame__credentials" aria-hidden="true">
-              <span class="cred-chip">CP 10431658</span>
-              <span class="cred-chip">CE 12440475</span>
+        <div class="hero-pro__visual">
+          <div class="portrait-pro">
+            <div class="portrait-pro__halo" aria-hidden="true"></div>
+            <div class="portrait-pro__ring">
+              <div class="portrait-pro__inner">
+                <img src="../images/doctor-portrait.svg"
+                     alt="Dr. Robinson Robles, neumólogo, retrato profesional placeholder"
+                     width="400" height="500"
+                     fetchpriority="high"
+                     decoding="async">
+                <div class="portrait-pro__creds" aria-hidden="true">
+                  <span class="cred-glass">CP 10431658</span>
+                  <span class="cred-glass">CE 12440475</span>
+                </div>
+                <p class="portrait-pro__chip">Dr. Robinson Emanuel Robles Hernández · Neumólogo · CDMX</p>
+              </div>
             </div>
-            <p class="portrait-frame__caption">Dr. Robinson Emanuel Robles Hernández · Neumólogo · CDMX</p>
           </div>
         </div>
       </div>
@@ -300,9 +304,9 @@
     <section class="section">
       <div class="container container--narrow">
         <div class="reveal-up">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Quién soy</span>
-          <h2>Mi compromiso con cada paciente.</h2>
-          <p class="lead">
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Quién soy</span>
+          <h2 style="margin-top: 18px;">Mi compromiso con <em style="font-style: italic; font-family: var(--font-serif); color: var(--sea); font-weight: 600;">cada paciente.</em></h2>
+          <p class="lead-pro">
             Soy el Dr. Robinson Robles, neumólogo clínico e investigador en enfermedades bronquiales. Mi compromiso es ofrecerte una atención médica que combine <strong>experiencia, empatía y transparencia</strong>.
           </p>
           <p>
@@ -316,14 +320,12 @@
     </section>
 
     <!-- ===== Investigador reconocido (sección destacada) ===== -->
-    <section class="section" style="background: var(--cloud);">
+    <section class="section" style="background: linear-gradient(180deg, var(--paper) 0%, var(--cloud) 100%);">
       <div class="container">
-        <div class="reveal-up" style="text-align: center; max-width: 760px; margin: 0 auto var(--sp-7);">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Investigador reconocido</span>
-          <h2>Práctica clínica respaldada por investigación activa.</h2>
-          <p class="lead" style="margin: 0 auto;">
-            Las decisiones que tomo en consulta se basan en la misma evidencia que reviso, genero y publico. Áreas de investigación: <strong>fisiopatología de las vías aéreas, hipoxemia, prevención y diagnóstico temprano de EPOC, y tabaquismo</strong>.
-          </p>
+        <div class="section-head reveal-up">
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Investigador reconocido</span>
+          <h2>Práctica clínica respaldada por <em>investigación activa.</em></h2>
+          <p>Las decisiones que tomo en consulta se basan en la misma evidencia que reviso, genero y publico. Áreas: <strong>fisiopatología de las vías aéreas, hipoxemia, prevención y diagnóstico temprano de EPOC, y tabaquismo</strong>.</p>
         </div>
 
         <div class="grid grid-3 reveal-up" style="max-width: 920px; margin: 0 auto var(--sp-7);">
@@ -394,8 +396,8 @@
     <section class="section">
       <div class="container">
         <div class="reveal-up" style="max-width: 760px; margin: 0 auto var(--sp-7); text-align: center;">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Adscripción institucional</span>
-          <h2>Clínica de Tabaquismo y EPOC del INER</h2>
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Adscripción institucional</span>
+          <h2 style="margin-top: 18px;">Clínica de <em>Tabaquismo y EPOC</em> del INER</h2>
           <p class="lead" style="margin: 0 auto;">
             El Instituto Nacional de Enfermedades Respiratorias es el centro de referencia federal para enfermedades pulmonares en México. La Clínica de Tabaquismo y EPOC concentra el manejo médico del cese del tabaco y la EPOC con base en guías GOLD y protocolos institucionales.
           </p>
@@ -403,19 +405,19 @@
 
         <div class="institutions-row reveal-up">
           <a class="institution" href="https://www.iner.salud.gob.mx/" rel="external noopener">
-            <img src="/images/inst-iner.svg" alt="Logo del Instituto Nacional de Enfermedades Respiratorias (INER)" width="200" height="80" loading="lazy">
+            <img src="../images/inst-iner.svg" alt="Logo del Instituto Nacional de Enfermedades Respiratorias (INER)" width="200" height="80" loading="lazy">
             <span>Adscripción · Investigación</span>
           </a>
           <a class="institution" href="https://www.medicasur.com.mx/" rel="external noopener">
-            <img src="/images/inst-medica-sur.svg" alt="Logo de Médica Sur" width="200" height="80" loading="lazy">
+            <img src="../images/inst-medica-sur.svg" alt="Logo de Médica Sur" width="200" height="80" loading="lazy">
             <span>Práctica privada</span>
           </a>
           <span class="institution">
-            <img src="/images/inst-unam.svg" alt="Logo de la Universidad Nacional Autónoma de México (UNAM)" width="200" height="80" loading="lazy">
+            <img src="../images/inst-unam.svg" alt="Logo de la Universidad Nacional Autónoma de México (UNAM)" width="200" height="80" loading="lazy">
             <span>Residencia · Especialidad</span>
           </span>
           <a class="institution" href="https://www.ucam.edu/" rel="external noopener">
-            <img src="/images/inst-ucam.svg" alt="Logo de la Universidad Católica de Murcia (UCAM)" width="200" height="80" loading="lazy">
+            <img src="../images/inst-ucam.svg" alt="Logo de la Universidad Católica de Murcia (UCAM)" width="200" height="80" loading="lazy">
             <span>Maestría en EPOC</span>
           </a>
         </div>
@@ -426,8 +428,8 @@
     <section class="section" style="background: var(--cloud);">
       <div class="container container--narrow">
         <div class="reveal-up" style="margin-bottom: var(--sp-6);">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Formación académica</span>
-          <h2>Trayectoria</h2>
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Formación académica</span>
+          <h2 style="margin-top: 18px;">Trayectoria</h2>
         </div>
 
         <ol class="timeline reveal-up">
@@ -469,8 +471,8 @@
     <section class="section">
       <div class="container">
         <div class="reveal-up" style="text-align: center; max-width: 760px; margin: 0 auto var(--sp-6);">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Credenciales verificables</span>
-          <h2>Cédulas y certificación</h2>
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Credenciales verificables</span>
+          <h2 style="margin-top: 18px;">Cédulas y <em>certificación.</em></h2>
           <p class="lead" style="margin: 0 auto;">
             Cada credencial es verificable de forma independiente en los registros oficiales correspondientes.
           </p>
@@ -503,8 +505,8 @@
     <section class="section" style="background: var(--cloud);">
       <div class="container">
         <div class="reveal-up" style="text-align: center; max-width: 760px; margin: 0 auto var(--sp-6);">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Membresías activas</span>
-          <h2>Sociedades médicas</h2>
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Membresías activas</span>
+          <h2 style="margin-top: 18px;">Sociedades <em>médicas.</em></h2>
           <p class="lead" style="margin: 0 auto;">
             Pertenezco a las sociedades nacionales e internacionales que reúnen a la comunidad neumológica de habla hispana e inglesa.
           </p>
@@ -535,8 +537,8 @@
     <section class="section">
       <div class="container">
         <div class="reveal-up" style="text-align: center; max-width: 760px; margin: 0 auto var(--sp-6);">
-          <span class="eyebrow"><span class="dot" aria-hidden="true"></span>Consulta privada</span>
-          <h2>Hospital Médica Sur · Tlalpan, CDMX</h2>
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Consulta privada</span>
+          <h2 style="margin-top: 18px;">Hospital <em>Médica Sur</em> · Tlalpan, CDMX</h2>
           <p class="lead" style="margin: 0 auto;">
             La consulta privada se realiza en Médica Sur, hospital privado de tercer nivel ubicado al sur de la Ciudad de México.
           </p>
@@ -582,18 +584,18 @@
       </div>
     </section>
 
-    <!-- ===== CTA final ===== -->
+    <!-- ===== CTA aurora final ===== -->
     <section class="section">
       <div class="container">
-        <div class="cta-band reveal-up">
+        <div class="cta-aurora reveal-up">
           <h2>Una consulta basada en la misma evidencia que aplico en el INER.</h2>
           <p>Si tienes una enfermedad respiratoria crónica, síntomas persistentes o necesitas segunda opinión, agenda valoración. Atención presencial en Médica Sur o teleconsulta.</p>
-          <div class="cta-band__actions">
-            <a class="btn btn--whatsapp btn--lg"
+          <div class="cta-aurora__actions">
+            <a class="btn btn--whatsapp btn--lg btn-pro"
                href="https://wa.me/5215614838970?text=Hola%2C%20me%20gustar%C3%ADa%20agendar%20una%20consulta%20de%20neumolog%C3%ADa.">
               Agendar por WhatsApp
             </a>
-            <a class="btn btn--ghost btn--lg" href="mailto:contacto@atmen.mx?subject=Solicitud%20de%20cita">Escribir por correo</a>
+            <a class="btn btn--ghost btn--lg" href="../contacto/index.html">Otros canales</a>
           </div>
         </div>
       </div>
@@ -614,7 +616,7 @@
       <div>
         <p>
           <strong>Revisado médicamente por:</strong>
-          <a href="/sobre-el-doctor/" itemprop="url"><span itemprop="name">Dr. Robinson Emanuel Robles Hernández</span></a>,
+          <a href="../sobre-el-doctor/index.html" itemprop="url"><span itemprop="name">Dr. Robinson Emanuel Robles Hernández</span></a>,
           <span itemprop="jobTitle">Médico Neumólogo</span> · Cédula Profesional <span itemprop="identifier">10431658</span>
           (<a href="https://www.cedulaprofesional.sep.gob.mx/" rel="external noopener">verificable en SEP</a>).
         </p>
@@ -650,13 +652,13 @@
     <p class="footer-meta">
       <span>© 2026 Atmen · Dr. Robinson Robles.</span>
       <span>
-        <a href="/aviso-de-privacidad/">Aviso de Privacidad</a> ·
-        <a href="/">Inicio</a>
+        <a href="../aviso-de-privacidad/index.html">Aviso de Privacidad</a> ·
+        <a href="../index.html">Inicio</a>
       </span>
     </p>
   </footer>
 
-  <script defer src="/js/reveal.js"></script>
-  <script defer src="/js/datalayer.js"></script>
+  <script defer src="../js/reveal.js"></script>
+  <script defer src="../js/datalayer.js"></script>
 </body>
 </html>
