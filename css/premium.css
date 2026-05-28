@@ -373,6 +373,7 @@ html { scroll-padding-top: 88px; }
 .tag-pill:hover::before { opacity: 1; }
 
 /* === Marquee de instituciones === */
+/* DEPRECATED Task 17 — reemplazado por .institutions-ribbon (Task 6). No eliminar todavia. */
 .marquee {
   position: relative;
   overflow: hidden;
@@ -1825,4 +1826,52 @@ html { scroll-padding-top: 88px; }
 
 @media (prefers-reduced-motion: reduce) {
   .agendar__menu, .agendar__backdrop, .agendar__chev { animation: none !important; transition: none !important; }
+}
+
+/* =========================================================
+   INSTITUTIONS RIBBON — franja delgada entre hero y padecimientos
+   Task 6 — reemplaza .marquee como seccion propia
+   ========================================================= */
+.institutions-ribbon {
+  background: #fff;
+  border-top: 1px solid var(--line-soft, var(--border));
+  border-bottom: 1px solid var(--line-soft, var(--border));
+  padding: 10px 0;
+  overflow: hidden;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
+}
+.institutions-ribbon__track {
+  display: flex;
+  gap: 36px;
+  align-items: center;
+  animation: ribbon-scroll 50s linear infinite;
+  width: max-content;
+}
+.institutions-ribbon__item {
+  font-size: 12.5px;
+  color: var(--ink-muted);
+  font-weight: 600;
+  letter-spacing: 0.02em;
+  white-space: nowrap;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+}
+.institutions-ribbon__item::after {
+  content: "·";
+  color: var(--line-soft, var(--border));
+  margin-left: 24px;
+}
+@keyframes ribbon-scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .institutions-ribbon__track {
+    animation: none;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 0 22px;
+  }
 }
