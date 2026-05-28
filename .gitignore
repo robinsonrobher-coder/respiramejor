@@ -32,3 +32,5 @@ _drafts/
 .claude/scripts/
 .claude/skills/
 .claude/settings.local.json
+.superpowers/
+.playwright-mcp/
