@@ -32,6 +32,12 @@
   --border:       rgba(2,62,138,.10);
   --border-strong:rgba(2,62,138,.18);
 
+  /* === Editoriales (rediseño v3) === */
+  --cream:        #fbf9f3;  /* fondo editorial cálido */
+  --paper-warm:   #f7f4ec;  /* fondo de secciones tipo revista */
+  --line-soft:    #e6e3d8;  /* hairline editorial */
+  --muted:        var(--ink-muted);
+
   /* === Acentos semánticos (reescritibles por página) === */
   --accent:       var(--sea);
   --accent-soft:  var(--mist);
@@ -41,7 +47,8 @@
   --warn-soft:    #ffe0e0;
 
   /* === Tipografía === */
-  --font-sans:    "Plus Jakarta Sans", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-sans:    "Inter", "Plus Jakarta Sans", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
   --font-serif:   "Fraunces", Georgia, "Times New Roman", serif;
 
   /* === Escala fluida (clamp) === */
