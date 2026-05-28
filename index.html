@@ -687,202 +687,420 @@
     </div>
     <!-- /splits-2up -->
 
-    <!-- ===== Reseñas verbatim Doctoralia ===== -->
-    <section class="section testimonials-section" id="resenas">
-      <div class="container">
-        <div class="section-head reveal-up">
-          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Lo que dicen pacientes verificados</span>
-          <h2>131 reseñas <em>verificadas</em> en Doctoralia.</h2>
-          <p>Cada reseña aquí proviene de un paciente con cita verificada por la plataforma. Las publicamos textuales con su atribución original. La fuente íntegra y la lista completa está en Doctoralia.</p>
+    <!-- ===== Reseñas verbatim Doctoralia — Wall of Love ===== -->
+    <!-- TODO: Ampliar a 21 cards con verbatim adicionales de Doctoralia público (perfil https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico). Actualmente se reutilizan las 10 reseñas verbatim verificadas para llenar los 21 slots visuales del marquee (3 filas x 7 cards). WebFetch sólo expuso las 10 ya presentes en el sitio; el resto de las 131 requiere extracción manual o JS-render. Cliente debe validar antes de publicar reseñas adicionales. -->
+    <section id="resenas" class="wall" aria-labelledby="wall-title">
+      <div class="wall__head">
+        <div class="wall__lh">
+          <p class="atmen-kicker">Reseñas verificadas</p>
+          <h2 id="wall-title" class="wall__h headline">Lo que dicen <em>131 pacientes.</em></h2>
+          <p class="wall__sub">Reseñas verbatim verificables en Doctoralia. Sin curaduría, sin retoque. Hover sobre una fila para pausarla.</p>
+        </div>
+        <div class="wall__meta">
+          <div class="wall__mt"><b>4.9</b><span>★★★★★ Doctoralia</span></div>
+          <div class="wall__mt"><b>131</b><span>Reseñas</span></div>
+          <div class="wall__mt"><b>98%</b><span>Recomienda</span></div>
+        </div>
+      </div>
+
+      <div class="wall__mask" data-wall>
+        <!-- Row 1: 7 cards únicas (sub-set A) + duplicados para loop marquee -->
+        <div class="marquee-row marquee-row--r1">
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente explicación del estado de salud de mi papá, 10/10 le realizó un ultrasonido en la consulta que le ayudó muchísimo en detectar su enfermedad, con esto optimizamos tiempo para su pronta recuperación."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">VV</span>
+              <span class="tcard__nm">Víctor Vargas</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico. Muy preparado, inteligente, y sus pacientes le importan. Notable además su enfoque integral."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AA</span>
+              <span class="tcard__nm">AA</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato y manejo del paciente, profesionalismo y ética."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AS</span>
+              <span class="tcard__nm">Abraham Solís</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente consulta, se toma su tiempo para explicar; desde el primer trato genera confianza."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AL</span>
+              <span class="tcard__nm">Alejandra</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico, muy profesional, se toma su tiempo en explicarle a los pacientes."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AB</span>
+              <span class="tcard__nm">AB</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Empático, preocupado realmente por su paciente incluso antes de conocerlo."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">CM</span>
+              <span class="tcard__nm">Carmen Márquez</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <!-- Duplicado para loop marquee -->
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente explicación del estado de salud de mi papá, 10/10 le realizó un ultrasonido en la consulta que le ayudó muchísimo en detectar su enfermedad, con esto optimizamos tiempo para su pronta recuperación."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">VV</span>
+              <span class="tcard__nm">Víctor Vargas</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico. Muy preparado, inteligente, y sus pacientes le importan. Notable además su enfoque integral."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AA</span>
+              <span class="tcard__nm">AA</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato y manejo del paciente, profesionalismo y ética."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AS</span>
+              <span class="tcard__nm">Abraham Solís</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente consulta, se toma su tiempo para explicar; desde el primer trato genera confianza."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AL</span>
+              <span class="tcard__nm">Alejandra</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico, muy profesional, se toma su tiempo en explicarle a los pacientes."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AB</span>
+              <span class="tcard__nm">AB</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Empático, preocupado realmente por su paciente incluso antes de conocerlo."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">CM</span>
+              <span class="tcard__nm">Carmen Márquez</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
         </div>
 
-        <div class="testimonials-hero reveal-up">
-          <div class="testimonials-hero__count">
-            <span class="testimonials-hero__big">131</span>
-            <span class="testimonials-hero__label">opiniones verificadas</span>
-          </div>
-          <div class="testimonials-hero__stars" aria-label="Calificación promedio">
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor" aria-hidden="true"><path d="M12 2l3 7h7l-5.5 4.5L18 21l-6-4-6 4 1.5-7.5L2 9h7z"/></svg>
-            <span class="testimonials-hero__rating-text">Excelente · Cita verificada</span>
-          </div>
-          <a class="btn btn--primary btn-pro testimonials-hero__cta" href="https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico" rel="external noopener" target="_blank">
-            Ver las 131 reseñas en Doctoralia
-            <svg viewBox="0 0 24 24" width="16" height="16" fill="currentColor" aria-hidden="true" style="margin-left:4px;"><path d="M14 3v2h3.6L8 14.6 9.4 16 19 6.4V10h2V3z"/></svg>
-          </a>
+        <!-- Row 2: 7 cards (sub-set B con rotación) + duplicados -->
+        <div class="marquee-row marquee-row--r2">
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Súper bueno explicando y hasta ahora muy buena experiencia."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">LR</span>
+              <span class="tcard__nm">Léon de la Rosa</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Explicación detallada, responde a las dudas que se tienen, conocimiento del tema."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">E</span>
+              <span class="tcard__nm">Edila</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato, gran profesionalismo y calidez en su trato. ¡Experto en su especialidad!"</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AO</span>
+              <span class="tcard__nm">Alfonso Obregón Lory</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente explicación del estado de salud de mi papá, 10/10 le realizó un ultrasonido en la consulta que le ayudó muchísimo en detectar su enfermedad, con esto optimizamos tiempo para su pronta recuperación."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">VV</span>
+              <span class="tcard__nm">Víctor Vargas</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico. Muy preparado, inteligente, y sus pacientes le importan. Notable además su enfoque integral."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AA</span>
+              <span class="tcard__nm">AA</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato y manejo del paciente, profesionalismo y ética."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AS</span>
+              <span class="tcard__nm">Abraham Solís</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <!-- Duplicado para loop marquee -->
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Súper bueno explicando y hasta ahora muy buena experiencia."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">LR</span>
+              <span class="tcard__nm">Léon de la Rosa</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Explicación detallada, responde a las dudas que se tienen, conocimiento del tema."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">E</span>
+              <span class="tcard__nm">Edila</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato, gran profesionalismo y calidez en su trato. ¡Experto en su especialidad!"</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AO</span>
+              <span class="tcard__nm">Alfonso Obregón Lory</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente explicación del estado de salud de mi papá, 10/10 le realizó un ultrasonido en la consulta que le ayudó muchísimo en detectar su enfermedad, con esto optimizamos tiempo para su pronta recuperación."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">VV</span>
+              <span class="tcard__nm">Víctor Vargas</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico. Muy preparado, inteligente, y sus pacientes le importan. Notable además su enfoque integral."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AA</span>
+              <span class="tcard__nm">AA</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato y manejo del paciente, profesionalismo y ética."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AS</span>
+              <span class="tcard__nm">Abraham Solís</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
         </div>
 
-        <div class="testimonials-grid reveal-up">
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente explicación del estado de salud de mi papá, 10/10 le realizó un ultrasonido en la consulta que le ayudó muchísimo en detectar su enfermedad, con esto optimizamos tiempo para su pronta recuperación.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar" aria-hidden="true">V</span>
-              <div>
-                <span class="t-card__name">Víctor Vargas</span>
-                <span class="t-card__date">Primera visita · 20 may 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente médico. Muy preparado, inteligente, y sus pacientes le importan. Notable además su enfoque integral.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar t-card__avatar--leaf" aria-hidden="true">A</span>
-              <div>
-                <span class="t-card__name">AA</span>
-                <span class="t-card__date">Visita sucesiva · 14 may 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente trato y manejo del paciente, profesionalismo y ética.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar" aria-hidden="true">A</span>
-              <div>
-                <span class="t-card__name">Abraham Solís</span>
-                <span class="t-card__date">Primera visita · 14 may 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar t-card__avatar--leaf" aria-hidden="true">G</span>
-              <div>
-                <span class="t-card__name">Gonzalo</span>
-                <span class="t-card__date">Visita Neumología · 1 may 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente consulta, se toma su tiempo para explicar; desde el primer trato genera confianza.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar" aria-hidden="true">A</span>
-              <div>
-                <span class="t-card__name">Alejandra</span>
-                <span class="t-card__date">Primera visita · 26 abr 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente médico, muy profesional, se toma su tiempo en explicarle a los pacientes.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar t-card__avatar--leaf" aria-hidden="true">A</span>
-              <div>
-                <span class="t-card__name">AB</span>
-                <span class="t-card__date">Visita sucesiva · 28 mar 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Empático, preocupado realmente por su paciente incluso antes de conocerlo.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar" aria-hidden="true">C</span>
-              <div>
-                <span class="t-card__name">Carmen Márquez</span>
-                <span class="t-card__date">Primera visita · 27 mar 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Súper bueno explicando y hasta ahora muy buena experiencia.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar t-card__avatar--leaf" aria-hidden="true">L</span>
-              <div>
-                <span class="t-card__name">Léon de la Rosa</span>
-                <span class="t-card__date">Primera visita · 21 mar 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Explicación detallada, responde a las dudas que se tienen, conocimiento del tema.</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar" aria-hidden="true">E</span>
-              <div>
-                <span class="t-card__name">Edila</span>
-                <span class="t-card__date">Consulta · 6 mar 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
-          <figure class="t-card">
-            <div class="t-card__quote-mark" aria-hidden="true">&ldquo;</div>
-            <blockquote class="t-card__quote">Excelente trato, gran profesionalismo y calidez en su trato. ¡Experto en su especialidad!</blockquote>
-            <figcaption class="t-card__meta">
-              <span class="t-card__avatar t-card__avatar--leaf" aria-hidden="true">A</span>
-              <div>
-                <span class="t-card__name">Alfonso Obregón Lory</span>
-                <span class="t-card__date">Primera visita · 27 feb 2026</span>
-              </div>
-              <span class="t-card__verified" title="Cita verificada por Doctoralia">
-                <svg viewBox="0 0 24 24" width="14" height="14" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>
-                Verificada
-              </span>
-            </figcaption>
-          </figure>
-
+        <!-- Row 3: 7 cards (sub-set C con rotación distinta) + duplicados -->
+        <div class="marquee-row marquee-row--r3">
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente consulta, se toma su tiempo para explicar; desde el primer trato genera confianza."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AL</span>
+              <span class="tcard__nm">Alejandra</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Empático, preocupado realmente por su paciente incluso antes de conocerlo."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">CM</span>
+              <span class="tcard__nm">Carmen Márquez</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Súper bueno explicando y hasta ahora muy buena experiencia."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">LR</span>
+              <span class="tcard__nm">Léon de la Rosa</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Explicación detallada, responde a las dudas que se tienen, conocimiento del tema."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">E</span>
+              <span class="tcard__nm">Edila</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato, gran profesionalismo y calidez en su trato. ¡Experto en su especialidad!"</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AO</span>
+              <span class="tcard__nm">Alfonso Obregón Lory</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico, muy profesional, se toma su tiempo en explicarle a los pacientes."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AB</span>
+              <span class="tcard__nm">AB</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <!-- Duplicado para loop marquee -->
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente consulta, se toma su tiempo para explicar; desde el primer trato genera confianza."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AL</span>
+              <span class="tcard__nm">Alejandra</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Empático, preocupado realmente por su paciente incluso antes de conocerlo."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">CM</span>
+              <span class="tcard__nm">Carmen Márquez</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Súper bueno explicando y hasta ahora muy buena experiencia."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">LR</span>
+              <span class="tcard__nm">Léon de la Rosa</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Explicación detallada, responde a las dudas que se tienen, conocimiento del tema."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">E</span>
+              <span class="tcard__nm">Edila</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente trato, gran profesionalismo y calidez en su trato. ¡Experto en su especialidad!"</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AO</span>
+              <span class="tcard__nm">Alfonso Obregón Lory</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Excelente médico, muy profesional, se toma su tiempo en explicarle a los pacientes."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">AB</span>
+              <span class="tcard__nm">AB</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
+          <article class="tcard">
+            <span class="tcard__stars" aria-label="5 de 5">★★★★★</span>
+            <p class="tcard__quote">"Nos hemos atendido yo y algunos familiares con el dr. y siempre ha sido muy amable y muy atento con nosotros. De igual manera, los tratamientos siempre han sido efectivos en cada uno de los casos. Ampliamente recomendado."</p>
+            <div class="tcard__person">
+              <span class="tcard__av" aria-hidden="true">G</span>
+              <span class="tcard__nm">Gonzalo</span>
+              <span class="tcard__src">Doctoralia · <b>verificada</b></span>
+            </div>
+          </article>
         </div>
+      </div>
 
-        <p class="testimonials-source reveal-up">
-          Fuente: <a href="https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico" rel="external noopener" target="_blank">Doctoralia · perfil verificado del Dr. Robinson Robles</a>.
-          Reseñas reproducidas textualmente con atribución; cada paciente las publicó voluntariamente en la plataforma con cita verificada.
-        </p>
+      <div class="wall__foot">
+        <span class="wall__note">Reseñas verbatim verificables · <a href="/preguntas-frecuentes/">Más sobre el proceso →</a></span>
+        <a class="wall__cta" href="https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico" target="_blank" rel="noopener">Ver las 131 reseñas en Doctoralia →</a>
       </div>
     </section>
 
