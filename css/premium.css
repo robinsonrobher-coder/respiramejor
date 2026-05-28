@@ -1875,3 +1875,106 @@ html { scroll-padding-top: 88px; }
     padding: 0 22px;
   }
 }
+
+/* =========================================================
+   SWITCHER — Padecimientos índice clínico
+   Mobile: details nativo. Desktop (>=900): JS upgrade a tabs.
+   ========================================================= */
+
+.switcher-section { padding: 56px 22px; background: var(--paper-warm); }
+.switcher-section__head { max-width: 720px; margin: 0 auto 28px; }
+.switcher-section__h {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(26px, 4.5vw, 36px);
+  letter-spacing: -0.025em;
+  margin: 8px 0 0;
+  color: var(--ink);
+}
+
+.switcher { max-width: 1180px; margin: 0 auto; display: flex; flex-direction: column; gap: 8px; }
+
+.sw-item { background: #fff; border: 1px solid var(--line-soft); border-radius: 12px; overflow: hidden; }
+.sw-item summary {
+  list-style: none;
+  display: flex; align-items: center; gap: 12px;
+  padding: 16px 18px;
+  font-weight: 600;
+  cursor: pointer;
+  min-height: 56px;
+}
+.sw-item summary::-webkit-details-marker { display: none; }
+.sw-num { font-size: 12px; color: #bbb; font-variant-numeric: tabular-nums; min-width: 24px; }
+.sw-name { flex: 1; font-size: 16px; color: #222; }
+.sw-arr { color: var(--ocean); opacity: 0; transition: opacity .15s; }
+.sw-item[open] .sw-arr { opacity: 1; }
+.sw-item[open] summary { background: var(--ocean); color: #fff; }
+.sw-item[open] summary .sw-num { color: rgba(255,255,255,0.6); }
+.sw-item[open] summary .sw-name { color: #fff; }
+.sw-item[open] summary .sw-arr { color: #fff; }
+
+.sw-detail { padding: 22px 18px 24px; }
+.sw-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 700; color: var(--leaf);
+  letter-spacing: 0.08em; text-transform: uppercase; margin: 0 0 10px;
+}
+.sw-tag::before { content: ""; width: 6px; height: 6px; border-radius: 50%; background: var(--leaf); }
+.sw-detail h3 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(24px, 5vw, 30px);
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+  color: var(--ink);
+}
+.sw-desc { font-size: 15px; line-height: 1.6; color: #3a4a55; margin: 0 0 18px; max-width: 60ch; }
+
+.sw-pillars { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 18px; }
+.sw-pillar { background: var(--paper-warm); border-radius: 10px; padding: 14px; }
+.sw-pl { display: block; font-size: 10.5px; font-weight: 700; text-transform: uppercase; letter-spacing: 0.08em; color: var(--ocean); margin: 0 0 6px; }
+.sw-pv { display: block; font-size: 13.5px; color: #222; line-height: 1.45; }
+
+.sw-foot { padding-top: 14px; border-top: 1px solid var(--line-soft); }
+.sw-more { color: var(--ocean); font-weight: 600; font-size: 13.5px; text-decoration: none; }
+.sw-more:hover { text-decoration: underline; }
+
+/* Desktop tabs layout — activado por JS añadiendo .switcher--tabs */
+@media (min-width: 900px) {
+  .switcher--tabs {
+    display: grid;
+    grid-template-columns: 280px 1fr;
+    gap: 28px;
+    background: #fff;
+    border: 1px solid var(--line-soft);
+    border-radius: 18px;
+    padding: 32px;
+    box-shadow: 0 30px 60px -30px rgba(2,62,138,0.12);
+    position: relative;
+    min-height: 480px;
+  }
+  .switcher--tabs .sw-item { border: none; border-radius: 0; background: transparent; overflow: visible; }
+  .switcher--tabs .sw-item summary {
+    border-radius: 8px;
+    padding: 11px 12px;
+    min-height: 44px;
+    font-size: 14.5px;
+    background: transparent;
+  }
+  .switcher--tabs .sw-item[open] summary,
+  .switcher--tabs .sw-item summary:hover { background: #f5f8fa; color: var(--ink); }
+  .switcher--tabs .sw-item[open] summary { background: var(--ocean); color: #fff; }
+  .switcher--tabs .sw-detail { display: none; }
+  .switcher--tabs .sw-item[open] .sw-detail {
+    display: block;
+    position: absolute;
+    inset: 32px 32px 32px 340px;
+    padding: 0;
+    overflow-y: auto;
+  }
+  .sw-pillars { grid-template-columns: repeat(3, 1fr); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sw-arr, .sw-item summary { transition: none !important; }
+}
