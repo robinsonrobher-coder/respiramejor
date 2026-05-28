@@ -26,14 +26,5 @@
 
   document.querySelectorAll('.reveal-up').forEach(function (el) { obs.observe(el); });
 
-  /* Navbar mobile toggler */
-  var toggler = document.querySelector('.navbar__toggler');
-  var menu = document.querySelector('.navbar__menu');
-  if (toggler && menu) {
-    toggler.addEventListener('click', function () {
-      var expanded = toggler.getAttribute('aria-expanded') === 'true';
-      toggler.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-      menu.classList.toggle('is-open');
-    });
-  }
+  /* Navbar mobile toggler is handled by js/site-nav.js */
 })();
