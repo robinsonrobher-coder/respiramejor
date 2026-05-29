@@ -1,66 +1,61 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Dr. Robinson Robles, Neumólogo">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 500" width="400" height="500" role="img" aria-label="Dr. Robinson Robles, Neumólogo — retrato editorial (foto profesional pendiente)">
   <defs>
-    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1">
-      <stop offset="0%"   stop-color="#caf0f8"/>
-      <stop offset="55%"  stop-color="#90e0ef"/>
-      <stop offset="100%" stop-color="#95d5b2"/>
+    <linearGradient id="field" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%"   stop-color="#03045e"/>
+      <stop offset="48%"  stop-color="#023e8a"/>
+      <stop offset="100%" stop-color="#0077b6"/>
     </linearGradient>
-    <radialGradient id="halo" cx="35%" cy="32%" r="55%">
-      <stop offset="0%"  stop-color="#00b4d8" stop-opacity=".55"/>
-      <stop offset="55%" stop-color="#00b4d8" stop-opacity="0"/>
+    <radialGradient id="glow" cx="32%" cy="26%" r="62%">
+      <stop offset="0%"  stop-color="#48cae4" stop-opacity=".55"/>
+      <stop offset="55%" stop-color="#0096c7" stop-opacity="0"/>
     </radialGradient>
-    <linearGradient id="coat" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#ffffff"/>
-      <stop offset="100%" stop-color="#e6eef5"/>
+    <linearGradient id="figure" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%"   stop-color="#eafaff" stop-opacity=".95"/>
+      <stop offset="55%"  stop-color="#bfe9f3" stop-opacity=".80"/>
+      <stop offset="100%" stop-color="#90e0ef" stop-opacity=".45"/>
     </linearGradient>
-    <linearGradient id="skin" x1="0" y1="0" x2="0" y2="1">
-      <stop offset="0%" stop-color="#e8c4a0"/>
-      <stop offset="100%" stop-color="#cfa07a"/>
+    <linearGradient id="rim" x1="0" y1="0" x2="1" y2="0">
+      <stop offset="0%" stop-color="#caf0f8"/>
+      <stop offset="100%" stop-color="#06a77d"/>
     </linearGradient>
+    <clipPath id="frame"><rect width="400" height="500" rx="0"/></clipPath>
   </defs>
 
-  <!-- Frame fondo -->
-  <rect width="400" height="500" fill="url(#bg)"/>
-  <rect width="400" height="500" fill="url(#halo)"/>
+  <g clip-path="url(#frame)">
+    <!-- Campo de marca -->
+    <rect width="400" height="500" fill="url(#field)"/>
+    <rect width="400" height="500" fill="url(#glow)"/>
 
-  <!-- Hombros / bata -->
-  <path d="M40 500 V410 C40 360 110 330 200 330 C290 330 360 360 360 410 V500 Z" fill="url(#coat)"/>
-  <!-- Solapa izquierda -->
-  <path d="M170 330 L200 380 L170 460 L150 410 Z" fill="#dbe4ec" opacity=".9"/>
-  <!-- Solapa derecha -->
-  <path d="M230 330 L200 380 L230 460 L250 410 Z" fill="#dbe4ec" opacity=".9"/>
-  <!-- Stethoscope -->
-  <path d="M150 360 Q200 420 250 360" stroke="#0077b6" stroke-width="6" fill="none" stroke-linecap="round" opacity=".85"/>
-  <circle cx="252" cy="360" r="9" fill="#0077b6" opacity=".85"/>
+    <!-- Anillos de respiración (firma) -->
+    <g fill="none" stroke="#ffffff" stroke-opacity=".10">
+      <circle cx="200" cy="208" r="118"/>
+      <circle cx="200" cy="208" r="158"/>
+      <circle cx="200" cy="208" r="198"/>
+    </g>
 
-  <!-- Cuello -->
-  <rect x="180" y="285" width="40" height="60" rx="10" fill="url(#skin)"/>
+    <!-- Silueta médica: hombros + bata -->
+    <path d="M44 500 V440 C44 384 116 352 200 352 C284 352 356 384 356 440 V500 Z" fill="url(#figure)"/>
+    <!-- Apertura de bata / cuello en V -->
+    <path d="M200 360 L172 500 L188 500 L200 404 L212 500 L228 500 Z" fill="#023e8a" fill-opacity=".28"/>
+    <!-- Cuello -->
+    <rect x="181" y="300" width="38" height="64" rx="16" fill="url(#figure)"/>
+    <!-- Cabeza (silueta limpia, sin rasgos) -->
+    <ellipse cx="200" cy="206" rx="74" ry="86" fill="url(#figure)"/>
 
-  <!-- Cabeza -->
-  <ellipse cx="200" cy="220" rx="78" ry="92" fill="url(#skin)"/>
-  <!-- Cabello -->
-  <path d="M122 200 C122 145 160 115 200 115 C240 115 278 145 278 200 C278 168 252 152 220 152 C188 152 145 165 132 195 Z" fill="#2b2018"/>
-  <!-- Ojos azules (guiño a la paleta) -->
-  <ellipse cx="172" cy="220" rx="9" ry="6" fill="#ffffff"/>
-  <ellipse cx="228" cy="220" rx="9" ry="6" fill="#ffffff"/>
-  <circle cx="172" cy="221" r="4" fill="#0096c7"/>
-  <circle cx="228" cy="221" r="4" fill="#0096c7"/>
-  <circle cx="173" cy="220" r="1.4" fill="#001533"/>
-  <circle cx="229" cy="220" r="1.4" fill="#001533"/>
-  <!-- Cejas -->
-  <rect x="160" y="204" width="24" height="3" rx="1.5" fill="#2b2018"/>
-  <rect x="216" y="204" width="24" height="3" rx="1.5" fill="#2b2018"/>
-  <!-- Nariz -->
-  <path d="M198 230 Q200 250 196 260 Q200 264 204 260" stroke="#a07955" stroke-width="2" fill="none" stroke-linecap="round" opacity=".7"/>
-  <!-- Boca -->
-  <path d="M186 280 Q200 290 214 280" stroke="#7a3a3a" stroke-width="2.5" fill="none" stroke-linecap="round"/>
+    <!-- Luz de borde sutil sobre la figura -->
+    <path d="M126 206 C126 150 158 120 200 120" fill="none" stroke="url(#rim)" stroke-width="3" stroke-linecap="round" stroke-opacity=".8"/>
+    <path d="M52 444 C52 392 120 360 200 358" fill="none" stroke="url(#rim)" stroke-width="2.5" stroke-linecap="round" stroke-opacity=".55"/>
 
-  <!-- Pin INER (ID) -->
-  <rect x="128" y="384" width="34" height="14" rx="3" fill="#0077b6" opacity=".9"/>
-  <text x="145" y="394" font-family="system-ui, sans-serif" font-size="8" font-weight="700"
-        fill="#ffffff" text-anchor="middle">INER</text>
+    <!-- Trazo flow-volume (firma respiratoria) -->
+    <path d="M40 470 Q120 430 200 458 T 360 452" fill="none" stroke="#06a77d" stroke-width="2.4" stroke-opacity=".7"/>
+    <path d="M40 484 Q120 448 200 472 T 360 468" fill="none" stroke="#48cae4" stroke-width="2" stroke-opacity=".55"/>
 
-  <!-- Marca de placeholder (sutil para producción no confundir) -->
-  <text x="200" y="492" font-family="system-ui, sans-serif" font-size="9"
-        fill="#0a2540" opacity=".35" text-anchor="middle">Foto definitiva pendiente</text>
+    <!-- Estetoscopio insinuado -->
+    <path d="M168 372 Q200 416 232 372" fill="none" stroke="#caf0f8" stroke-width="4" stroke-linecap="round" stroke-opacity=".7"/>
+    <circle cx="234" cy="372" r="6.5" fill="#caf0f8" fill-opacity=".8"/>
+
+    <!-- Pie: nota de placeholder elegante -->
+    <text x="200" y="486" font-family="Georgia, 'Times New Roman', serif" font-style="italic" font-size="13"
+          fill="#caf0f8" fill-opacity=".75" text-anchor="middle" letter-spacing=".02em">Foto profesional · próximamente</text>
+  </g>
 </svg>

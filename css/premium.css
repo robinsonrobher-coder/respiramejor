@@ -1544,16 +1544,22 @@ html { scroll-padding-top: 88px; }
 .hero-stats__cell dd {
   order: 1;
   margin: 0;
-  font-weight: 700;
+  font-weight: 800;
   font-size: 28px;
   letter-spacing: -0.03em;
-  color: var(--ocean);
   line-height: 1;
+  background: linear-gradient(135deg, var(--ocean) 0%, var(--sea) 55%, var(--leaf) 100%);
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
 }
 .hero-stats__cell dd b { font-weight: inherit; }
-.hero-stats__cell dd small { font-size: 18px; color: var(--leaf); }
+.hero-stats__cell dd small { font-size: 18px; -webkit-text-fill-color: var(--leaf); color: var(--leaf); }
 
 .hero-split__right {
+  position: relative;
+  isolation: isolate;
+  overflow: hidden;
   background: linear-gradient(160deg, #e9f1f8 0%, #d4e6ed 50%, #c8ddd5 100%);
   padding: 28px 22px;
   border-top: 1px solid var(--line-soft);
@@ -1561,6 +1567,25 @@ html { scroll-padding-top: 88px; }
   flex-direction: column;
   gap: 14px;
 }
+/* Textura editorial: rejilla de puntos sutil + onda respiratoria firma al pie */
+.hero-split__right::before {
+  content: "";
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(2,62,138,.10) 1px, transparent 1.4px);
+  background-size: 22px 22px;
+  -webkit-mask-image: radial-gradient(ellipse at 70% 30%, #000 35%, transparent 78%);
+  mask-image: radial-gradient(ellipse at 70% 30%, #000 35%, transparent 78%);
+  opacity: .5; z-index: 0; pointer-events: none;
+}
+.hero-split__right::after {
+  content: "";
+  position: absolute; left: 0; right: 0; bottom: 0; height: 120px;
+  background:
+    url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 120' preserveAspectRatio='none'%3E%3Cpath d='M0 80 Q 100 30 200 80 T 400 80 T 600 80' stroke='%2306a77d' stroke-width='1.6' stroke-opacity='.35' fill='none'/%3E%3Cpath d='M0 98 Q 100 52 200 98 T 400 98 T 600 98' stroke='%230077b6' stroke-width='1.6' stroke-opacity='.28' fill='none'/%3E%3C/svg%3E")
+    no-repeat bottom center / 100% 100%;
+  z-index: 0; pointer-events: none;
+}
+.hero-split__right > * { position: relative; z-index: 1; }
 
 .portrait-editorial {
   background: #fff;
@@ -1910,13 +1935,16 @@ html { scroll-padding-top: 88px; }
     position: relative;
     min-height: 480px;
   }
-  .switcher--tabs .sw-item { border: none; border-radius: 0; background: transparent; overflow: visible; }
+  /* Todos los tabs apilados en la columna izquierda; el detalle ocupa la derecha (absolute). */
+  .switcher--tabs .sw-item { grid-column: 1; align-self: start; border: none; border-radius: 0; background: transparent; overflow: visible; }
+  .switcher--tabs .sw-item + .sw-item { margin-top: 2px; }
   .switcher--tabs .sw-item summary {
-    border-radius: 8px;
-    padding: 11px 12px;
-    min-height: 44px;
+    border-radius: 10px;
+    padding: 12px 14px;
+    min-height: 46px;
     font-size: 14.5px;
     background: transparent;
+    transition: background .2s var(--ease), color .2s var(--ease);
   }
   .switcher--tabs .sw-item[open] summary,
   .switcher--tabs .sw-item summary:hover { background: #f5f8fa; color: var(--ink); }
@@ -2089,3 +2117,207 @@ html { scroll-padding-top: 88px; }
   color: var(--ocean); font-weight: 600; font-size: 14px; text-decoration: none;
 }
 @media (prefers-reduced-motion: reduce) { .faq-chev { transition: none !important; } }
+
+/* =========================================================
+   REDISEÑO 2026-05-29 — mobile-first, menos scroll, UX premium
+   ========================================================= */
+
+/* --- 1. Padecimientos: explorador chips + panel único (.cond) --- */
+.cond { max-width: 1100px; margin: 0 auto; }
+/* fallback sin JS: el acordeón nativo ya funciona; ocultamos nada */
+.cond-tabs {
+  display: flex; gap: 8px; padding: 4px 2px 14px;
+  overflow-x: auto; -webkit-overflow-scrolling: touch;
+  scroll-snap-type: x proximity; scrollbar-width: none;
+  -webkit-mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+          mask-image: linear-gradient(90deg, transparent, #000 3%, #000 97%, transparent);
+}
+.cond-tabs::-webkit-scrollbar { display: none; }
+.cond-tab {
+  flex: 0 0 auto; scroll-snap-align: center;
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 11px 17px; min-height: 44px;
+  border-radius: 99px; border: 1px solid var(--line-soft);
+  background: #fff; color: var(--ink);
+  font-weight: 600; font-size: 14px; white-space: nowrap; cursor: pointer;
+  transition: background .2s var(--ease), color .2s var(--ease), border-color .2s var(--ease), box-shadow .2s var(--ease);
+}
+.cond-tab__n { font-size: 11px; font-variant-numeric: tabular-nums; color: var(--ink-muted); font-weight: 800; }
+.cond-tab:hover { border-color: var(--sky); }
+.cond-tab[aria-selected="true"] {
+  background: var(--ocean); color: #fff; border-color: var(--ocean);
+  box-shadow: 0 12px 24px -12px rgba(2,62,138,.6);
+}
+.cond-tab[aria-selected="true"] .cond-tab__n { color: rgba(255,255,255,.62); }
+.cond-panel {
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 18px; padding: clamp(20px, 3vw, 34px);
+  box-shadow: 0 30px 60px -34px rgba(2,62,138,.2);
+  animation: cond-in .3s var(--ease);
+}
+@keyframes cond-in { from { opacity: 0; transform: translateY(8px); } to { opacity: 1; transform: none; } }
+.cond-panel .sw-detail { padding: 0; }
+.cond-panel .sw-tag { margin-top: 0; }
+.cond-panel h3 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(22px, 4vw, 30px); letter-spacing: -.025em;
+  margin: 0 0 10px; color: var(--ink);
+}
+.cond-panel .sw-desc { font-size: 15px; line-height: 1.6; color: #3a4a55; margin: 0 0 18px; max-width: 64ch; }
+.cond-panel .sw-pillars { display: grid; grid-template-columns: 1fr; gap: 10px; margin: 0 0 16px; }
+.cond-panel .sw-foot { padding-top: 14px; border-top: 1px solid var(--line-soft); }
+@media (min-width: 760px) { .cond-panel .sw-pillars { grid-template-columns: repeat(3, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .cond-panel { animation: none; } }
+
+/* --- 2. Servicios: carrusel horizontal en móvil (menos scroll vertical) --- */
+@media (max-width: 720px) {
+  .services-grid {
+    display: grid;
+    grid-auto-flow: column;
+    grid-auto-columns: 84%;
+    grid-template-columns: none !important;
+    gap: 12px;
+    overflow-x: auto; -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: -16px; padding: 4px 16px 14px;
+  }
+  .services-grid::-webkit-scrollbar { display: none; }
+  .service-card { scroll-snap-align: center; height: auto; }
+}
+
+/* --- 3. Video Once Noticias: nunca desbordar en móvil --- */
+.media-feature { max-width: 100%; overflow: hidden; }
+.media-feature__frame { width: 100%; max-width: 100%; }
+.media-feature__frame iframe { position: absolute; inset: 0; width: 100% !important; height: 100% !important; max-width: 100%; border: 0; }
+
+/* --- 4. FAQ: un solo indicador "+" circular limpio (mata duplicado de site.css) --- */
+.faq-accordion .faq-item summary::after { content: none !important; display: none !important; }
+.faq-accordion .faq-item summary { padding-right: 20px; }
+.faq-accordion .faq-chev {
+  flex: 0 0 auto; width: 32px; height: 32px; border-radius: 50%;
+  display: grid; place-items: center;
+  background: var(--cloud-alt); color: var(--ocean);
+  font-size: 0; line-height: 0;
+  transition: transform .25s var(--ease), background .25s var(--ease), color .25s var(--ease);
+}
+.faq-accordion .faq-chev::before {
+  content: ""; width: 13px; height: 13px;
+  background:
+    linear-gradient(currentColor, currentColor) center/13px 2.2px no-repeat,
+    linear-gradient(currentColor, currentColor) center/2.2px 13px no-repeat;
+}
+.faq-accordion .faq-item[open] .faq-chev { transform: rotate(45deg); background: var(--ocean); color: #fff; }
+
+/* --- 5. Aseguradoras --- */
+.insurers-band { padding: clamp(40px,7vw,64px) 22px; background: var(--paper); border-top: 1px solid var(--line-soft); }
+.insurers-band__head { text-align: center; max-width: 640px; margin: 0 auto 24px; }
+.insurers-band__head h2 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(22px,4.5vw,32px); letter-spacing: -.025em; margin: 10px 0 8px; color: var(--ink);
+}
+.insurers-band__head h2 em { font-style: italic; font-family: var(--font-serif); font-weight: 600; color: var(--sea); }
+.insurers-band__head p { color: var(--ink-muted); margin: 0; font-size: 1rem; }
+.insurers-logos { display: flex; flex-wrap: wrap; gap: 10px; justify-content: center; max-width: 860px; margin: 0 auto; }
+.insurer-chip {
+  display: inline-flex; align-items: center; gap: 8px;
+  padding: 12px 20px; border-radius: 14px;
+  background: linear-gradient(180deg,#fff,var(--cloud));
+  border: 1px solid var(--border); box-shadow: var(--shadow-xs);
+  font-weight: 800; color: var(--ocean); font-size: 14px; letter-spacing: .01em;
+}
+.insurer-chip svg { width: 16px; height: 16px; color: var(--leaf); }
+.insurers-note { text-align: center; font-size: 12.5px; color: var(--ink-muted); margin: 18px auto 0; max-width: 56ch; }
+
+/* --- 6. "Cómo abordo cada caso" → proceso elegante (.approach) --- */
+.approach { max-width: 1040px; margin: 0 auto; display: grid; gap: 14px; grid-template-columns: 1fr; counter-reset: ap; }
+@media (min-width: 820px) { .approach { grid-template-columns: repeat(3, 1fr); gap: 18px; } }
+.approach__item {
+  position: relative; background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 18px; padding: 26px 24px 24px; overflow: hidden;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.approach__item::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 3px;
+  background: linear-gradient(90deg, var(--sky), var(--leaf)); transform: scaleX(0); transform-origin: left;
+  transition: transform .4s var(--ease);
+}
+.approach__item:hover { transform: translateY(-4px); box-shadow: 0 26px 56px -30px rgba(2,62,138,.28); border-color: rgba(0,180,216,.3); }
+.approach__item:hover::before { transform: scaleX(1); }
+.approach__n {
+  font-family: var(--font-serif); font-style: italic; font-weight: 600;
+  font-size: 2.4rem; line-height: 1;
+  background: linear-gradient(135deg, var(--ocean), var(--sea) 55%, var(--leaf));
+  background-clip: text; -webkit-background-clip: text; color: transparent;
+  margin-bottom: 12px; display: block;
+}
+.approach__item h3 { font-size: 1.12rem; font-weight: 700; margin: 0 0 8px; color: var(--ink); letter-spacing: -.01em; }
+.approach__item p { font-size: 14px; line-height: 1.6; color: var(--ink-muted); margin: 0; }
+
+/* --- 7. Hero: rebalanceo desktop + credenciales en chips --- */
+@media (min-width: 960px) {
+  .hero-split { grid-template-columns: 1.28fr .82fr; }
+  .hero-split__right { justify-content: center; }
+  .portrait-editorial { max-width: 340px; margin-inline: auto; width: 100%; }
+}
+.credentials {
+  grid-template-columns: 1fr 1fr; gap: 8px;
+  background: transparent; padding: 0;
+}
+.credentials > div {
+  flex-direction: column; align-items: flex-start; gap: 2px;
+  background: rgba(255,255,255,.78); border: 1px solid rgba(255,255,255,.7);
+  border-radius: 11px; padding: 10px 12px;
+  box-shadow: 0 6px 16px -10px rgba(2,62,138,.25);
+}
+.credentials dt { font-size: 9.5px; text-transform: uppercase; letter-spacing: .08em; color: var(--ink-muted); font-weight: 700; }
+.credentials dd { color: var(--ocean); font-weight: 800; font-size: 13.5px; font-feature-settings: "tnum"; }
+
+/* --- 8. WhatsApp FAB: más reconocible + etiqueta persistente en móvil --- */
+.whatsapp-float::after {
+  content: "Escríbeme"; position: absolute; right: calc(100% + 12px); top: 50%;
+  transform: translateY(-50%);
+  background: #fff; color: var(--ocean); font-weight: 800; font-size: 12.5px;
+  padding: 7px 13px; border-radius: 99px; white-space: nowrap;
+  box-shadow: 0 8px 22px rgba(2,62,138,.22); pointer-events: none;
+}
+@media (min-width: 541px) { .whatsapp-float::after { display: none; } } /* en desktop ya hay label hover */
+@media (max-width: 540px) {
+  .whatsapp-float { width: 62px; height: 62px; }
+  .whatsapp-float svg { width: 32px; height: 32px; }
+  .whatsapp-float::after { font-size: 11.5px; padding: 6px 11px; right: calc(100% + 9px); }
+}
+
+/* --- 9. Footer rediseñado (CSS sobre estructura existente) --- */
+footer {
+  background:
+    radial-gradient(ellipse at 0% 0%, rgba(0,180,216,.18), transparent 45%),
+    radial-gradient(ellipse at 100% 0%, rgba(6,167,125,.16), transparent 45%),
+    linear-gradient(180deg, #04124c 0%, #020b33 100%);
+  border-top: 3px solid transparent;
+  border-image: linear-gradient(90deg, var(--sky), var(--leaf)) 1;
+  padding: clamp(44px,7vw,72px) clamp(16px,4vw,32px) 28px;
+}
+.footer-compliance {
+  display: grid; gap: 14px;
+  padding-bottom: var(--sp-5); margin-bottom: var(--sp-5);
+  border-bottom: 1px solid rgba(255,255,255,.14);
+}
+.footer-compliance p { color: rgba(255,255,255,.66); font-size: .82rem; line-height: 1.65; margin: 0; }
+.footer-compliance strong { color: #fff; font-weight: 700; }
+.footer-compliance a { color: var(--mist); }
+.footer-compliance .address { color: rgba(255,255,255,.78); }
+.footer-compliance .disclaimer-emergency {
+  margin: 0; padding: 12px 14px; border: 0; border-radius: 12px;
+  background: rgba(255,255,255,.05); font-size: .78rem; color: rgba(255,255,255,.62);
+}
+.footer-meta {
+  margin-top: 0; align-items: center;
+}
+.footer-meta a {
+  color: rgba(255,255,255,.82); text-decoration: none; font-weight: 600;
+  padding: 4px 0; transition: color .2s var(--ease);
+}
+.footer-meta a:hover { color: var(--sky); }
+@media (max-width: 640px) {
+  .footer-meta { flex-direction: column; align-items: flex-start; gap: 6px; }
+}

@@ -20,5 +20,7 @@
     <xhtml:link rel="alternate" hreflang="x-default" href="https://atmen.mx/preguntas-frecuentes/"/>
   </url>
   <!-- /aviso-de-privacidad/ es noindex, /informacion-regulatoria/ es noindex,
-       /contacto/ es noindex,nofollow — los tres quedan fuera del sitemap. -->
+       /contacto/ es noindex,nofollow — los tres quedan fuera del sitemap.
+       /consulta-neumologia/ y /apnea-del-sueno/ son landing pages SOLO de Google Ads
+       (noindex, sin enlaces internos): por diseño quedan fuera del sitemap. -->
 </urlset>

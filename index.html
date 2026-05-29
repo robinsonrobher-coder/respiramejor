@@ -215,6 +215,7 @@
       </button>
       <ul class="navbar__menu" id="navMenu">
         <li><a href="sobre-el-doctor/index.html">Sobre el doctor</a></li>
+        <li><a href="index.html#padecimientos">Padecimientos</a></li>
         <li><a href="preguntas-frecuentes/index.html">Preguntas frecuentes</a></li>
         <li><a href="contacto/index.html">Contacto</a></li>
         <li>
@@ -573,10 +574,8 @@
       </div>
     </section>
 
-    <!-- ===== SERVICIOS + FILOSOFÍA (split 2-up en desktop) ===== -->
-    <div class="splits-2up">
     <!-- ===== SERVICIOS DIAGNÓSTICOS ===== -->
-    <section class="section split-cell" id="servicios" style="background: linear-gradient(180deg, var(--cloud) 0%, var(--paper) 100%);">
+    <section class="section" id="servicios" style="background: linear-gradient(180deg, var(--cloud) 0%, var(--paper) 100%);">
       <div class="container">
         <div class="section-head reveal-up">
           <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Servicios en consultorio</span>
@@ -648,8 +647,8 @@
       </div>
     </section>
 
-    <!-- ===== Filosofía / Cómo abordo ===== -->
-    <section class="section pilares split-cell" style="background: linear-gradient(180deg, var(--paper) 0%, var(--cloud) 100%);">
+    <!-- ===== Cómo abordo cada caso → proceso ===== -->
+    <section class="section" style="background: var(--cream);">
       <div class="container">
         <div class="section-head reveal-up">
           <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Cómo abordo cada caso</span>
@@ -657,35 +656,25 @@
           <p>Enfrentar una enfermedad pulmonar genera dudas y temores. Mi trabajo es traducirlos en información clara y un plan que pueda explicarse, ajustarse y seguirse.</p>
         </div>
 
-        <div class="grid grid-3">
-          <article class="bento-card glass reveal-up">
-            <div class="bento-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm-1 5h2v6l5 3-1 1.7L11 14z"/></svg>
-            </div>
-            <h3 class="bento-card__title">1 · Evaluación basada en evidencia</h3>
-            <p class="bento-card__desc">Historia clínica orientada al sistema respiratorio, exploración física dirigida y solicitud de estudios solo cuando aportan información que cambia el manejo.</p>
+        <div class="approach reveal-up">
+          <article class="approach__item">
+            <span class="approach__n">01</span>
+            <h3>Evaluación basada en evidencia</h3>
+            <p>Historia clínica orientada al sistema respiratorio, exploración dirigida y estudios solo cuando aportan información que cambia el manejo.</p>
           </article>
-
-          <article class="bento-card glass reveal-up">
-            <div class="bento-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M3 5h18v2H3zm0 6h18v2H3zm0 6h12v2H3z"/></svg>
-            </div>
-            <h3 class="bento-card__title">2 · Diagnóstico claro y explicado</h3>
-            <p class="bento-card__desc">Cada paciente sale de consulta sabiendo qué tiene, por qué lo tiene y qué hace cada parte del tratamiento. Sin jerga innecesaria, sin promesas sin sustento.</p>
+          <article class="approach__item">
+            <span class="approach__n">02</span>
+            <h3>Diagnóstico claro y explicado</h3>
+            <p>Sales de consulta sabiendo qué tienes, por qué, y qué hace cada parte del tratamiento. Sin jerga innecesaria, sin promesas sin sustento.</p>
           </article>
-
-          <article class="bento-card glass reveal-up">
-            <div class="bento-card__icon" aria-hidden="true">
-              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm4 11h-3v3h-2v-3H8v-2h3V8h2v3h3z"/></svg>
-            </div>
-            <h3 class="bento-card__title">3 · Acompañamiento real</h3>
-            <p class="bento-card__desc">Las enfermedades respiratorias son crónicas en la mayoría de los casos. El plan se ajusta en cada control con base en cómo se siente el paciente, los estudios y la evidencia más reciente.</p>
+          <article class="approach__item">
+            <span class="approach__n">03</span>
+            <h3>Acompañamiento real</h3>
+            <p>Las enfermedades respiratorias suelen ser crónicas. El plan se ajusta en cada control según cómo te sientes, los estudios y la evidencia más reciente.</p>
           </article>
         </div>
       </div>
     </section>
-    </div>
-    <!-- /splits-2up -->
 
     <!-- ===== Reseñas verbatim Doctoralia — Wall of Love ===== -->
     <!-- TODO: Ampliar a 21 cards con verbatim adicionales de Doctoralia público (perfil https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico). Actualmente se reutilizan las 10 reseñas verbatim verificadas para llenar los 21 slots visuales del marquee (3 filas x 7 cards). WebFetch sólo expuso las 10 ya presentes en el sitio; el resto de las 131 requiere extracción manual o JS-render. Cliente debe validar antes de publicar reseñas adicionales. -->
@@ -1104,11 +1093,8 @@
       </div>
     </section>
 
-    <!-- ===== EN MEDIOS + BIO PREVIEW (split 2-up desktop) ===== -->
-    <div class="splits-2up">
-
     <!-- ===== EN MEDIOS: ENTREVISTA ONCE NOTICIAS ===== -->
-    <section class="section media-section split-cell" id="medios" style="background: linear-gradient(180deg, var(--paper) 0%, var(--cloud) 100%);">
+    <section class="section media-section" id="medios" style="background: linear-gradient(180deg, var(--paper) 0%, var(--cloud) 100%);">
       <div class="container">
         <div class="section-head reveal-up">
           <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>El Dr. en medios</span>
@@ -1143,38 +1129,6 @@
         </div>
       </div>
     </section>
-
-    <!-- ===== Bio preview ===== -->
-    <section class="section bio-preview split-cell">
-      <div class="container">
-        <div class="bio-narrative">
-          <div class="reveal-up">
-            <div class="portrait-pro" style="max-width: 380px;">
-              <div class="portrait-pro__halo" aria-hidden="true"></div>
-              <div class="portrait-pro__ring">
-                <div class="portrait-pro__inner">
-                  <img src="images/doctor-portrait.svg" alt="Dr. Robinson Robles, retrato profesional placeholder" width="400" height="500" loading="lazy" decoding="async">
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="reveal-up">
-            <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Sobre el doctor</span>
-            <h2 style="font-size: clamp(1.8rem, 2.4vw, 2.4rem); letter-spacing: -.02em; margin: 16px 0 16px;">Investigador clínico, no <em style="font-style: italic; font-family: var(--font-serif); color: var(--sea);">solo</em> consulta privada.</h2>
-            <p>
-              Realicé la residencia en Neumología en el INER (UNAM, 2017-2020) y maestría en EPOC por la Universidad Católica de Murcia. Mantengo línea de investigación activa con un h-index de <strong>7</strong> y <strong>143 citas</strong> indexadas en Google Scholar.
-            </p>
-            <p>
-              La atención que doy en consulta privada en Médica Sur se basa en las mismas guías y protocolos que aplico en el INER, con la ventaja de tiempos de consulta y seguimiento personalizado. Soy miembro de <strong>ALAT</strong>, <strong>ERS</strong>, <strong>SMNyCT</strong> y <strong>SEPAR</strong>.
-            </p>
-            <a href="sobre-el-doctor/index.html" class="btn btn--ghost btn--lg" style="margin-top: 12px;">Conocer formación y publicaciones</a>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    </div>
-    <!-- /splits-2up medios + bio -->
 
     <div class="divider-pro"></div>
 
@@ -1252,6 +1206,27 @@
       </div>
     </section>
 
+    <!-- ===== Aseguradoras ===== -->
+    <section class="insurers-band" id="aseguradoras" aria-labelledby="insurers-title">
+      <div class="insurers-band__head reveal-up">
+        <p class="atmen-kicker" style="justify-content:center;">Pago y cobertura</p>
+        <h2 id="insurers-title">Trabajo con tu <em>aseguradora.</em></h2>
+        <p>Atención por reembolso o pago directo con las principales aseguradoras de gastos médicos mayores del país.</p>
+      </div>
+      <div class="insurers-logos reveal-up">
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>GNP</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>AXA</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>MetLife</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Bupa</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Allianz</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Seguros Monterrey</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Zurich</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>MAPFRE</span>
+        <span class="insurer-chip"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M9 16.17 4.83 12l-1.42 1.41L9 19 21 7l-1.41-1.41z"/></svg>Atlas</span>
+      </div>
+      <p class="insurers-note">Verifica las condiciones de tu póliza con tu aseguradora antes de la cita. También se acepta efectivo, tarjeta y transferencia.</p>
+    </section>
+
     <!-- ===== Contacto final ===== -->
     <section class="section" id="contacto" style="background: var(--cloud);">
       <div class="container">
@@ -1321,11 +1296,12 @@
     <p class="footer-meta">
       <span>© 2026 Atmen · Dr. Robinson Robles.</span>
       <span>
-        <a href="aviso-de-privacidad/index.html">Aviso de Privacidad</a> ·
-        <a href="informacion-regulatoria/index.html">Información regulatoria</a> ·
         <a href="sobre-el-doctor/index.html">Sobre el doctor</a> ·
+        <a href="index.html#padecimientos">Padecimientos</a> ·
         <a href="preguntas-frecuentes/index.html">Preguntas frecuentes</a> ·
-        <a href="contacto/index.html">Contacto</a>
+        <a href="contacto/index.html">Contacto</a> ·
+        <a href="aviso-de-privacidad/index.html">Aviso de Privacidad</a> ·
+        <a href="informacion-regulatoria/index.html">Información regulatoria</a>
       </span>
     </p>
   </footer>

@@ -1,0 +1,281 @@
+/* =========================================================
+   Atmen — Promo / Landings de campaña
+   Capa adicional sobre site.css + premium.css.
+   Componentes de conversión: hero de oferta, ficha de precio,
+   checklist de síntomas, pasos, tabla de precios, sticky CTA.
+   Mobile-first (80% del tráfico es móvil).
+   ========================================================= */
+
+/* === Hero de promo === */
+.promo-hero {
+  position: relative;
+  overflow: hidden;
+  isolation: isolate;
+  padding: 36px 22px 32px;
+  background:
+    radial-gradient(ellipse at 92% -10%, color-mix(in oklab, var(--accent) 22%, transparent), transparent 55%),
+    radial-gradient(ellipse at -10% 110%, rgba(6,167,125,.12), transparent 52%),
+    linear-gradient(180deg, var(--cream) 0%, #f1f8fb 100%);
+}
+.promo-hero__inner {
+  max-width: 1180px;
+  margin-inline: auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 26px;
+  align-items: center;
+}
+@media (min-width: 900px) {
+  .promo-hero { padding: 56px 32px 52px; }
+  .promo-hero__inner { grid-template-columns: 1.15fr .85fr; gap: 48px; }
+  .offer-card { max-width: 420px; margin-left: auto; width: 100%; }
+}
+
+/* En móvil, la barra CTA sticky ya es el canal principal: evitamos
+   duplicar con el FAB flotante (quitamos clutter abajo). */
+@media (max-width: 760px) {
+  body.has-sticky-cta .whatsapp-float { display: none; }
+}
+.promo-hero__copy > * { position: relative; z-index: 1; }
+
+.promo-bc {
+  list-style: none; margin: 0 0 16px; padding: 0;
+  display: flex; flex-wrap: wrap; gap: 8px;
+  font-size: 12.5px; color: var(--ink-muted);
+}
+.promo-bc a { color: inherit; text-decoration: none; }
+.promo-bc a:hover { color: var(--accent); }
+.promo-bc li[aria-current] { color: var(--ink); font-weight: 600; }
+
+.promo-h1 {
+  font-family: var(--font-display);
+  font-weight: 800;
+  font-size: clamp(31px, 7.5vw, 50px);
+  line-height: 1.04;
+  letter-spacing: -0.035em;
+  color: var(--ink);
+  margin: 14px 0 16px;
+}
+.promo-h1 em {
+  font-style: italic;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  color: var(--accent);
+}
+.promo-lede {
+  font-size: 16.5px;
+  line-height: 1.6;
+  color: #33414a;
+  margin: 0 0 22px;
+  max-width: 54ch;
+}
+.promo-lede b { color: var(--ocean); font-weight: 600; }
+
+/* Fila de confianza bajo el CTA */
+.promo-trust {
+  list-style: none; margin: 22px 0 0; padding: 18px 0 0;
+  border-top: 1px solid var(--line-soft);
+  display: flex; flex-wrap: wrap; gap: 10px 22px;
+}
+.promo-trust li {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; color: var(--ink-muted); line-height: 1.3;
+}
+.promo-trust li b { color: var(--ocean); font-weight: 700; }
+.promo-trust svg { width: 18px; height: 18px; color: var(--leaf); flex: 0 0 auto; }
+
+/* === Ficha de oferta / precio (columna derecha del hero) === */
+.offer-card {
+  background: #fff;
+  border: 1px solid var(--line-soft);
+  border-radius: 18px;
+  padding: 22px;
+  box-shadow: 0 26px 54px -28px rgba(2,62,138,0.42);
+  position: relative;
+}
+.offer-card__tag {
+  position: absolute; top: -11px; left: 22px;
+  background: var(--accent); color: #fff;
+  font-size: 10.5px; font-weight: 800; letter-spacing: .1em; text-transform: uppercase;
+  padding: 5px 12px; border-radius: 99px;
+  box-shadow: 0 8px 18px -6px color-mix(in oklab, var(--accent) 60%, transparent);
+}
+.offer-card__title { font-size: 1.15rem; font-weight: 700; margin: 8px 0 4px; color: var(--ink); }
+.offer-card__price {
+  display: flex; align-items: baseline; gap: 8px;
+  margin: 6px 0 2px;
+}
+.offer-card__price b {
+  font-size: 2.6rem; font-weight: 800; line-height: 1;
+  color: var(--ocean); letter-spacing: -.03em;
+  font-feature-settings: "tnum";
+}
+.offer-card__price small { font-size: .95rem; color: var(--ink-muted); font-weight: 600; }
+.offer-card__note { font-size: 12.5px; color: var(--ink-muted); margin: 0 0 16px; }
+.offer-card__list {
+  list-style: none; margin: 0 0 18px; padding: 16px 0 0;
+  border-top: 1px dashed var(--border);
+  display: grid; gap: 9px;
+}
+.offer-card__list li {
+  display: flex; justify-content: space-between; gap: 12px;
+  font-size: 13.5px; color: var(--ink);
+}
+.offer-card__list li span:last-child { color: var(--ocean); font-weight: 700; font-feature-settings: "tnum"; }
+.offer-card .agendar, .offer-card .btn { width: 100%; }
+.offer-card__fineprint { font-size: 11.5px; color: var(--ink-muted); margin: 12px 0 0; line-height: 1.45; }
+
+/* === Sección genérica de promo === */
+.promo-section { padding: 52px 22px; }
+.promo-section--warm { background: var(--paper-warm); }
+.promo-section--cloud { background: var(--cloud); }
+.promo-wrap { max-width: 1080px; margin-inline: auto; }
+.promo-wrap--narrow { max-width: 760px; }
+.promo-head { max-width: 720px; margin: 0 0 28px; }
+.promo-head--center { margin-inline: auto; text-align: center; }
+.promo-head h2 {
+  font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(24px, 4.5vw, 34px);
+  letter-spacing: -0.025em; margin: 10px 0 10px; color: var(--ink);
+}
+.promo-head h2 em { font-style: italic; font-family: var(--font-serif); font-weight: 600; color: var(--accent); }
+.promo-head p { color: var(--ink-muted); font-size: 1.02rem; margin: 0; }
+
+/* === Checklist de síntomas / "consulta si..." === */
+.symptom-grid {
+  display: grid; grid-template-columns: 1fr; gap: 10px;
+}
+@media (min-width: 640px) { .symptom-grid { grid-template-columns: 1fr 1fr; } }
+.symptom {
+  display: flex; gap: 12px; align-items: flex-start;
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 12px; padding: 14px 16px;
+}
+.symptom__ic {
+  flex: 0 0 auto; width: 30px; height: 30px; border-radius: 9px;
+  display: grid; place-items: center; margin-top: 1px;
+  background: color-mix(in oklab, var(--accent) 14%, #fff);
+  color: var(--accent);
+}
+.symptom__ic svg { width: 18px; height: 18px; }
+.symptom p { margin: 0; font-size: 14px; line-height: 1.45; color: var(--ink); }
+.symptom p b { display: block; font-weight: 700; margin-bottom: 1px; }
+
+/* === Pasos (cómo funciona) === */
+.steps { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; counter-reset: step; }
+@media (min-width: 860px) { .steps { grid-template-columns: repeat(4, 1fr); } }
+.step {
+  position: relative;
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 14px; padding: 20px 18px;
+}
+.step__n {
+  width: 38px; height: 38px; border-radius: 50%;
+  display: grid; place-items: center; margin-bottom: 12px;
+  background: linear-gradient(135deg, var(--accent), color-mix(in oklab, var(--accent) 55%, var(--sky)));
+  color: #fff; font-weight: 800; font-size: 1.05rem;
+  box-shadow: 0 8px 18px -6px color-mix(in oklab, var(--accent) 55%, transparent);
+}
+.step h3 { font-size: 1.02rem; font-weight: 700; margin: 0 0 6px; color: var(--ink); }
+.step p { font-size: 13.5px; color: var(--ink-muted); line-height: 1.55; margin: 0; }
+@media (min-width: 860px) {
+  .step:not(:last-child)::after {
+    content: ""; position: absolute; top: 38px; right: -8px;
+    width: 16px; height: 2px; background: var(--border-strong);
+  }
+}
+
+/* === Tabla de precios transparente === */
+.price-table {
+  width: 100%; border-collapse: collapse;
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 14px; overflow: hidden;
+  font-size: 14.5px;
+}
+.price-table caption {
+  caption-side: bottom; text-align: left;
+  font-size: 12px; color: var(--ink-muted); padding: 12px 4px 0; line-height: 1.5;
+}
+.price-table th, .price-table td { text-align: left; padding: 13px 16px; border-bottom: 1px solid var(--line-soft); }
+.price-table thead th { background: var(--cloud-alt); font-weight: 700; color: var(--ink); font-size: 12.5px; letter-spacing: .02em; text-transform: uppercase; }
+.price-table tbody tr:last-child td { border-bottom: 0; }
+.price-table td:last-child, .price-table th:last-child { text-align: right; white-space: nowrap; }
+.price-table .price-amt { font-weight: 800; color: var(--ocean); font-feature-settings: "tnum"; }
+.price-table .price-free { color: var(--leaf-deep); font-weight: 800; }
+.price-table tbody tr.is-feature td { background: color-mix(in oklab, var(--accent) 7%, #fff); }
+
+/* === Barra CTA sticky (solo móvil) === */
+.sticky-cta {
+  position: fixed; left: 0; right: 0; bottom: 0; z-index: var(--z-fab);
+  display: none;
+  align-items: center; gap: 12px;
+  padding: 10px 14px max(10px, env(safe-area-inset-bottom));
+  background: rgba(255,255,255,.92);
+  backdrop-filter: blur(12px) saturate(150%);
+  -webkit-backdrop-filter: blur(12px) saturate(150%);
+  border-top: 1px solid var(--border);
+  box-shadow: 0 -8px 24px -12px rgba(2,62,138,.25);
+}
+.sticky-cta__price { flex: 1 1 auto; min-width: 0; line-height: 1.15; }
+.sticky-cta__price b { display: block; font-size: 1.05rem; color: var(--ocean); font-weight: 800; }
+.sticky-cta__price span { font-size: 11.5px; color: var(--ink-muted); }
+.sticky-cta .btn { flex: 0 0 auto; padding: 13px 22px; min-height: 48px; }
+@media (max-width: 760px) {
+  .sticky-cta { display: flex; }
+  /* dejar respiro al final para que la barra no tape el footer */
+  body.has-sticky-cta footer { padding-bottom: 96px; }
+  /* subir el FAB de WhatsApp para que no choque con la barra */
+  body.has-sticky-cta .whatsapp-float { bottom: calc(86px + env(safe-area-inset-bottom, 0px)); }
+}
+
+/* === Aviso de riesgo (apnea / no tratar) === */
+.risk-note {
+  background: #fff; border: 1px solid var(--line-soft);
+  border-left: 4px solid var(--accent);
+  border-radius: 12px; padding: 18px 20px;
+  display: grid; gap: 6px;
+}
+.risk-note b { color: var(--ink); }
+.risk-note p { margin: 0; color: var(--ink-muted); font-size: 14px; line-height: 1.6; }
+
+/* === Tarjetas destacadas (landing → promos) === */
+.featured-band { padding: 52px 22px; background: var(--cream); }
+.featured-grid {
+  max-width: 1080px; margin: 0 auto;
+  display: grid; grid-template-columns: 1fr; gap: 16px;
+}
+@media (min-width: 800px) { .featured-grid { grid-template-columns: 1fr 1fr; } }
+.promo-link-card {
+  position: relative;
+  display: flex; flex-direction: column;
+  background: #fff; border: 1px solid var(--line-soft);
+  border-radius: 18px; padding: 26px 24px;
+  text-decoration: none; color: var(--ink);
+  overflow: hidden; isolation: isolate;
+  transition: transform .3s var(--ease), box-shadow .3s var(--ease), border-color .3s var(--ease);
+}
+.promo-link-card::before {
+  content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  background: linear-gradient(90deg, var(--sea), var(--sky));
+  transform: scaleX(0); transform-origin: left; transition: transform .4s var(--ease);
+}
+.promo-link-card--sueno::before { background: linear-gradient(90deg, var(--ocean), var(--bay)); }
+.promo-link-card:hover { transform: translateY(-4px); box-shadow: 0 24px 54px -26px rgba(2,62,138,.32); border-color: rgba(0,180,216,.32); color: var(--ink); }
+.promo-link-card:hover::before { transform: scaleX(1); }
+.promo-link-card__eyebrow { font-size: 11px; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; color: var(--sea); margin: 0 0 8px; }
+.promo-link-card--sueno .promo-link-card__eyebrow { color: var(--ocean); }
+.promo-link-card h3 { font-family: var(--font-display); font-size: 1.5rem; font-weight: 800; letter-spacing: -.02em; margin: 0 0 8px; }
+.promo-link-card p { color: var(--ink-muted); font-size: 14.5px; line-height: 1.6; margin: 0 0 16px; flex: 1 1 auto; }
+.promo-link-card__foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; padding-top: 14px; border-top: 1px solid var(--line-soft); }
+.promo-link-card__price { font-size: 13.5px; color: var(--ink); }
+.promo-link-card__price b { color: var(--ocean); font-weight: 800; font-size: 1.15rem; font-feature-settings: "tnum"; }
+.promo-link-card__go { display: inline-flex; align-items: center; gap: 6px; color: var(--sea); font-weight: 700; font-size: 14px; }
+.promo-link-card--sueno .promo-link-card__go { color: var(--ocean); }
+
+/* === Insurances row === */
+.insurers { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 6px; }
+.insurers span {
+  font-size: 12.5px; font-weight: 600; color: var(--ocean);
+  background: var(--cloud); border: 1px solid var(--border);
+  padding: 7px 13px; border-radius: 99px;
+}
