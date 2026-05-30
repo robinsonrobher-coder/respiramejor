@@ -304,12 +304,14 @@
 .offer-card {
   border-radius: 22px;
   box-shadow: 0 36px 72px -32px rgba(2,40,80,.52), 0 0 0 1px rgba(2,62,138,.04);
-  overflow: hidden;
 }
 .offer-card::after {
   content: ""; position: absolute; inset: 0 0 auto 0; height: 4px;
+  border-radius: 22px 22px 0 0;
   background: linear-gradient(90deg, var(--leaf), var(--sea) 55%, var(--ocean));
 }
+/* La etiqueta superior no debe quedar recortada */
+.offer-card__tag { z-index: 2; }
 .offer-card__price b {
   background: linear-gradient(120deg, var(--ocean), var(--sea) 70%, var(--leaf));
   -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; color: var(--ocean);
@@ -355,3 +357,9 @@
 
 /* Aviso de riesgo: acento coherente */
 .risk-note { border-radius: 14px; box-shadow: 0 12px 28px -26px rgba(2,40,80,.36); }
+
+/* Lista de valor (sin precios) con check */
+.offer-card__list--checks li { justify-content: flex-start; align-items: flex-start; gap: 9px; color: var(--ink); }
+.offer-card__list--checks li::before {
+  content: "✓"; color: var(--leaf-deep); font-weight: 800; flex: 0 0 auto; line-height: 1.45;
+}
