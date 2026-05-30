@@ -212,6 +212,7 @@ p, li { font-size: var(--fs-base); line-height: 1.7; }
   border: 0; cursor: pointer;
   min-height: 44px;
 }
+.btn > svg { width: 1.2em; height: 1.2em; flex: 0 0 auto; }
 .btn:hover { transform: translateY(-2px); }
 .btn:focus-visible { outline: 3px solid var(--sky); outline-offset: 3px; }
 .btn:active { transform: translateY(0) scale(.98); }
@@ -239,6 +240,8 @@ p, li { font-size: var(--fs-base); line-height: 1.7; }
 }
 .btn--ghost:hover { background: var(--sea); color: #fff; }
 .btn--lg { padding: 18px 32px; font-size: 1.05rem; }
+.btn--xl { padding: 20px 42px; font-size: 1.18rem; min-height: 64px; letter-spacing: -.01em; }
+@media (max-width: 560px) { .btn--xl { width: 100%; padding: 19px 28px; font-size: 1.1rem; } }
 
 /* === Hero === */
 .hero {
