@@ -1,7 +1,0 @@
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 80" width="200" height="80" role="img" aria-label="Universidad Católica de Murcia (UCAM)">
-  <rect width="200" height="80" rx="10" fill="#ffffff" stroke="#5d2e46" stroke-width="2"/>
-  <text x="100" y="36" font-family="Plus Jakarta Sans" font-size="24" font-weight="800"
-        fill="#5d2e46" text-anchor="middle" letter-spacing="2">UCAM</text>
-  <text x="100" y="58" font-family="Plus Jakarta Sans" font-size="9" font-weight="500"
-        fill="#5a708a" text-anchor="middle" letter-spacing=".4">Univ. Católica de Murcia</text>
-</svg>
