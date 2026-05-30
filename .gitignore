@@ -29,8 +29,8 @@ _drafts/
 *.local
 
 # Claude Code
-.claude/scripts/
-.claude/skills/
-.claude/settings.local.json
+.claude/
+.agents/
+skills-lock.json
 .superpowers/
 .playwright-mcp/

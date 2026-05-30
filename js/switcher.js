@@ -60,7 +60,9 @@
     ic.innerHTML = iconEl ? iconEl.innerHTML : '';
     tag.textContent = f.dataset.tag || '';
     title.textContent = f.dataset.name || '';
-    head.classList.toggle('is-leaf', f.dataset.leaf === '1');
+    const card = cards.find((c) => c.dataset.dx === slug);
+    const cp = card ? getComputedStyle(card).getPropertyValue('--cp').trim() : '';
+    if (cp) modal.style.setProperty('--cp', cp); else modal.style.removeProperty('--cp');
     content.innerHTML = (lead ? lead.outerHTML : '') + (points ? points.outerHTML : '');
     if (moreLink) moreLink.href = 'preguntas-frecuentes/index.html#' + slug;
     closeAgendar();

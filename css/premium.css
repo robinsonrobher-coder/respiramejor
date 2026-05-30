@@ -1613,6 +1613,7 @@ html { scroll-padding-top: 88px; }
   overflow: hidden;
 }
 .portrait-editorial__img img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.portrait-mono { width: 100%; height: 100%; display: block; }
 .portrait-editorial figcaption {
   font-size: 12px;
   color: #444;
@@ -1767,6 +1768,8 @@ html { scroll-padding-top: 88px; }
 
 /* Desktop popover */
 @media (min-width: 701px) {
+  /* el popover de agendar no debe recortarse por el overflow del hero */
+  .hero-split { overflow-x: clip; overflow-y: visible; }
   .agendar__btn { width: auto; min-width: 230px; }
   .agendar--popover .agendar__menu {
     position: absolute;
@@ -2010,6 +2013,47 @@ html { scroll-padding-top: 88px; }
 .wall__meta { display: flex; gap: 18px; }
 .wall__mt b { display: block; font-size: 22px; font-weight: 800; color: var(--ocean); letter-spacing: -0.02em; line-height: 1; }
 .wall__mt span { font-size: 11px; color: var(--ink-muted); }
+
+/* Reseña destacada — pull quote editorial (jerarquía sobre el marquee) */
+.wall__featured {
+  max-width: 920px;
+  margin: 0 auto 30px;
+  padding: 8px 22px 0;
+  text-align: center;
+  position: relative;
+}
+@media (min-width: 768px) { .wall__featured { padding-inline: 36px; } }
+.wall__featured-eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 11.5px; font-weight: 700; letter-spacing: .06em;
+  color: var(--ink-muted); text-transform: uppercase;
+  margin-bottom: 16px;
+}
+.wall__featured-stars { color: #f5a623; letter-spacing: 1px; font-size: 13px; }
+.wall__featured-quote {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 500;
+  font-size: clamp(20px, 3.2vw, 29px);
+  line-height: 1.34;
+  letter-spacing: -.01em;
+  color: var(--ink);
+  margin: 0 0 22px;
+  text-wrap: balance;
+}
+.wall__featured-cite {
+  display: inline-flex; align-items: center; gap: 12px;
+  justify-content: center;
+}
+.wall__featured-av {
+  width: 44px; height: 44px; border-radius: 50%;
+  background: linear-gradient(135deg, var(--sea), var(--ocean));
+  color: #fff; display: grid; place-items: center;
+  font-weight: 700; font-size: 15px; flex: 0 0 auto;
+}
+.wall__featured-meta { text-align: left; display: flex; flex-direction: column; }
+.wall__featured-meta b { font-size: 14px; color: var(--ink); }
+.wall__featured-meta span { font-size: 12px; color: var(--ink-muted); }
 
 .wall__mask { position: relative; }
 .wall__mask::before, .wall__mask::after {
@@ -2282,8 +2326,8 @@ html { scroll-padding-top: 88px; }
 }
 @media (min-width: 541px) { .whatsapp-float::after { display: none; } } /* en desktop ya hay label hover */
 @media (max-width: 540px) {
-  .whatsapp-float { width: 62px; height: 62px; }
-  .whatsapp-float svg { width: 32px; height: 32px; }
+  .whatsapp-float { width: 58px; height: 58px; }
+  .whatsapp-float svg { width: 30px; height: 30px; }
   .whatsapp-float::after { font-size: 11.5px; padding: 6px 11px; right: calc(100% + 9px); }
 }
 
@@ -2714,6 +2758,46 @@ footer {
 .cp-disnea{ --cp: var(--sky); }
 .cp-tos   { --cp: var(--aqua); }
 
+/* 5b. dx-cards: color por condición (variedad cohesiva dentro de la paleta respiratoria) */
+.dx-card { --cp: var(--sea); }
+.dx-card[data-dx="asma"]            { --cp: var(--sea); }
+.dx-card[data-dx="epoc"]            { --cp: var(--ocean); }
+.dx-card[data-dx="tos-cronica"]     { --cp: var(--bay); }
+.dx-card[data-dx="disnea"]          { --cp: var(--pine); }
+.dx-card[data-dx="apnea-del-sueno"] { --cp: var(--ocean-deep); }
+.dx-card[data-dx="tabaquismo"]      { --cp: var(--leaf); }
+.dx-card[data-dx="post-covid"]      { --cp: var(--leaf-deep); }
+.dx-card[data-dx="cancer-pulmon"]   { --cp: var(--ocean); }
+.dx-card[data-dx="derrame-pleural"] { --cp: var(--bay); }
+.dx-card[data-dx="broncoscopia"]    { --cp: var(--sea); }
+
+.dx-card__ic {
+  background: linear-gradient(135deg, var(--cp), color-mix(in oklab, var(--cp) 60%, #fff));
+  box-shadow: 0 8px 18px -8px color-mix(in oklab, var(--cp) 55%, transparent);
+}
+.dx-card::before {
+  background: linear-gradient(90deg, var(--cp), color-mix(in oklab, var(--cp) 55%, #fff));
+}
+.dx-card:hover { border-color: color-mix(in oklab, var(--cp) 38%, transparent); }
+.dx-card:hover .dx-card__go { color: var(--cp); }
+.dx-card:focus-visible { outline-color: color-mix(in oklab, var(--cp) 72%, var(--sky)); }
+
+/* 7. service-cards: textura de "onda respiratoria" + glow de acento (escapa al look genérico SaaS) */
+.service-card { --sc: var(--sea); background: radial-gradient(115% 75% at 100% 0%, color-mix(in oklab, var(--sc) 7%, transparent), transparent 55%), var(--paper); }
+.service-card--leaf { --sc: var(--leaf); }
+.service-card::after {
+  content: "";
+  position: absolute;
+  right: 0; bottom: 0;
+  width: 168px; height: 92px;
+  background: color-mix(in oklab, var(--sc) 34%, transparent);
+  -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 168 92'%3E%3Cpath d='M0 72 H42 L56 44 L74 86 L92 28 L110 86 L126 72 H168' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat bottom right / contain;
+          mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 168 92'%3E%3Cpath d='M0 72 H42 L56 44 L74 86 L92 28 L110 86 L126 72 H168' fill='none' stroke='%23000' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E") no-repeat bottom right / contain;
+  opacity: .55;
+  z-index: -1;
+  pointer-events: none;
+}
+
 /* 3. Tarjetas dx → ahora abren ficha (button) + iconos propios */
 button.dx-card { font: inherit; text-align: left; cursor: pointer; width: 100%; }
 .dx-card__go { background: none; border: 0; }
@@ -2721,6 +2805,7 @@ button.dx-card { font: inherit; text-align: left; cursor: pointer; width: 100%; 
 
 /* Ficha modal (dialog nativo) */
 .dx-modal {
+  --cp: var(--sea);
   border: 0; padding: 0; border-radius: 20px;
   width: min(560px, calc(100vw - 32px));
   max-height: min(86vh, 720px);
@@ -2734,14 +2819,9 @@ button.dx-card { font: inherit; text-align: left; cursor: pointer; width: 100%; 
 .dx-modal__head {
   position: relative; padding: 22px 24px 18px;
   background:
-    radial-gradient(ellipse at 88% -20%, rgba(0,180,216,.45), transparent 60%),
-    linear-gradient(135deg, var(--ocean-deep), var(--ocean) 62%, var(--sea));
+    radial-gradient(ellipse at 88% -20%, color-mix(in oklab, var(--cp) 62%, transparent), transparent 60%),
+    linear-gradient(135deg, var(--ocean-deep) 0%, color-mix(in oklab, var(--cp) 55%, var(--ocean-deep)) 58%, var(--cp) 100%);
   color: #fff;
-}
-.dx-modal__head.is-leaf {
-  background:
-    radial-gradient(ellipse at 88% -20%, rgba(6,167,125,.5), transparent 60%),
-    linear-gradient(135deg, var(--ocean-deep), #075e54 62%, var(--leaf-deep));
 }
 .dx-modal__ic { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; background: rgba(255,255,255,.16); border: 1px solid rgba(255,255,255,.28); margin-bottom: 12px; }
 .dx-modal__ic svg { width: 26px; height: 26px; }
@@ -2758,15 +2838,24 @@ button.dx-card { font: inherit; text-align: left; cursor: pointer; width: 100%; 
 .dx-modal__close:hover { background: rgba(255,255,255,.3); }
 .dx-modal__body { padding: 20px 24px 24px; overflow-y: auto; }
 .dx-modal__lead { font-size: 15px; color: #3a4a55; margin: 0 0 16px; line-height: 1.55; }
-.dx-points { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 10px; }
+.dx-points { list-style: none; margin: 0 0 18px; padding: 0; display: grid; gap: 12px; }
 .dx-points li {
-  display: grid; grid-template-columns: 34px 1fr; gap: 12px; align-items: start;
-  background: var(--paper-warm); border-radius: 12px; padding: 13px 14px;
+  position: relative;
+  display: grid; grid-template-columns: 42px 1fr; gap: 14px; align-items: start;
+  background: linear-gradient(180deg, color-mix(in oklab, var(--cp) 6%, #fff), #fff);
+  border: 1px solid color-mix(in oklab, var(--cp) 18%, var(--line-soft));
+  border-left: 3px solid var(--cp);
+  border-radius: 12px; padding: 14px 16px;
 }
-.dx-points__ic { width: 34px; height: 34px; border-radius: 9px; display: grid; place-items: center; background: color-mix(in oklab, var(--sea) 13%, #fff); color: var(--sea); }
-.dx-points__ic svg { width: 18px; height: 18px; }
-.dx-points b { display: block; font-size: 11px; letter-spacing: .06em; text-transform: uppercase; color: var(--ocean); margin-bottom: 2px; }
-.dx-points span { font-size: 13.5px; color: #2e3d49; line-height: 1.45; }
+.dx-points__ic {
+  width: 42px; height: 42px; border-radius: 12px; display: grid; place-items: center;
+  background: linear-gradient(135deg, var(--cp), color-mix(in oklab, var(--cp) 58%, #fff));
+  color: #fff;
+  box-shadow: 0 6px 14px -6px color-mix(in oklab, var(--cp) 60%, transparent);
+}
+.dx-points__ic svg { width: 20px; height: 20px; }
+.dx-points b { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; color: color-mix(in oklab, var(--cp) 82%, #000); margin-bottom: 3px; }
+.dx-points span { font-size: 13.5px; color: #3a4a55; line-height: 1.5; }
 .dx-modal__cta { display: flex; gap: 10px; flex-wrap: wrap; }
 .dx-modal__cta .btn { flex: 1 1 auto; }
 @media (prefers-reduced-motion: reduce) { .dx-modal[open] { animation: none; } }

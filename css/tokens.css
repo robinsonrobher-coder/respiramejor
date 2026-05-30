@@ -47,8 +47,8 @@
   --warn-soft:    #ffe0e0;
 
   /* === Tipografía === */
-  --font-sans:    "Inter", "Plus Jakarta Sans", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
-  --font-display: "Inter", "Plus Jakarta Sans", system-ui, sans-serif;
+  --font-sans:    "Plus Jakarta Sans", -apple-system, system-ui, "Segoe UI", Roboto, sans-serif;
+  --font-display: "Plus Jakarta Sans", system-ui, sans-serif;
   --font-serif:   "Fraunces", Georgia, "Times New Roman", serif;
 
   /* === Escala fluida (clamp) === */
