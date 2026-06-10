@@ -1,4 +1,4 @@
-# Atmen
+# Respira Mejor
 
 Sitio web profesional del **Dr. Robinson Emanuel Robles Hernández**, neumólogo investigador en CDMX. Adscrito a la Clínica de Tabaquismo y EPOC del INER y consulta privada en Médica Sur.
 
@@ -22,7 +22,7 @@ Abrir http://localhost:8000
 
 Push a `main` → auto-deploy en GitHub Pages.
 
-DNS pendiente de configurar al `atmen.mx`. Mientras: GitHub Pages default URL.
+Dominio de producción: **respiramejorcdmx.mx**, servido por GitHub Pages con DNS y HTTPS gestionados en Cloudflare (dominio registrado en Akky, nameservers apuntando a Cloudflare). El archivo `CNAME` del repo fija el dominio personalizado.
 
 ## Activar pre-commit hook (anti-mojibake)
 
@@ -43,7 +43,7 @@ El hook rechaza commits con secuencias UTF-8 mal codificadas a Win-1252 (las que
 ├── 404.html
 ├── sobre-el-doctor/index.html
 ├── aviso-de-privacidad/index.html      LFPDPPP 2025 / SABG (draft)
-├── CNAME                                atmen.mx
+├── CNAME                                respiramejorcdmx.mx
 ├── .nojekyll
 ├── robots.txt                           Whitelist bots IA
 ├── sitemap.xml
@@ -77,7 +77,7 @@ Scopes típicos: `(visible)` · `(invisible)` · `(home)` · `(sobre-el-doctor)`
 
 ## Compliance
 
-- COFEPRIS Aviso Modalidad A: **en trámite ante DIGIPRiS**. El sitio NO debe publicarse a producción hasta que el folio esté emitido y reemplazado en `top-bar-legal` (search & replace en `EN-TRAMITE-COFEPRIS`).
+- COFEPRIS Aviso de Publicidad Modalidad A: **emitido, folio 2609082002A00121** (declarado en `top-bar-legal` y footer compliance de todas las páginas).
 - Cédula Profesional: 10431658
 - Cédula de Especialidad en Neumología: 12440475
 - Consejo Nacional de Neumología y Cirugía de Tórax: folio 1509, vigente hasta 2031.
@@ -85,10 +85,10 @@ Scopes típicos: `(visible)` · `(invisible)` · `(home)` · `(sobre-el-doctor)`
 ## Pendientes ({{PARAM}}) bloqueantes para go-live
 
 - [ ] Foto profesional ≥ 2000×2500 px (actualmente placeholder SVG).
-- [ ] Folio COFEPRIS emitido (actualmente "en trámite").
+- [x] Folio COFEPRIS emitido (2609082002A00121).
 - [ ] Aviso de Privacidad firmado por el médico (texto draft listo).
 - [ ] Año del título de Médico Cirujano y universidad (asumido UNAM).
-- [ ] Email del dominio funcionando (`contacto@atmen.mx`, `privacidad@atmen.mx`).
+- [x] Email de contacto operativo (`robinsonrobher@gmail.com`).
 - [ ] Cal.com / agendamiento URL.
 - [ ] Coordenadas GPS exactas Médica Sur Torre 1 (verificar 7 decimales).
 - [ ] Confirmar teléfono oficial único.

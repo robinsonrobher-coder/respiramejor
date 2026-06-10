@@ -1,4 +1,4 @@
-// Atmen — FAQ acordeón (un panel a la vez) + ficha modal de padecimientos.
+// Respira Mejor — FAQ acordeón (un panel a la vez) + ficha modal de padecimientos.
 
 // FAQ: un solo panel abierto
 (function () {

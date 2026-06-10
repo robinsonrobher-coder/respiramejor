@@ -1,4 +1,4 @@
-// Atmen — Testimonials wall: pause on hover, IntersectionObserver pause off-viewport, click to expand
+// Respira Mejor — Testimonials wall: pause on hover, IntersectionObserver pause off-viewport, click to expand
 (function () {
   const root = document.querySelector('[data-wall]');
   if (!root) return;

@@ -1,4 +1,4 @@
-// Atmen — Modal global "Agendar cita": ventana centrada y clara,
+// Respira Mejor — Modal global "Agendar cita": ventana centrada y clara,
 // reusada por el Hero, las fichas de padecimientos y el CTA final.
 (function () {
   const modal = document.getElementById('agendarModal');

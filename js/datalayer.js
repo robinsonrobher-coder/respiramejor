@@ -1,4 +1,4 @@
-/* Atmen — dataLayer stub.
+/* Respira Mejor — dataLayer stub.
  * GTM aún no instalado (no tenemos GTM_ID). Cuando se instale, este archivo
  * se actualiza para empujar eventos reales según módulo 13 del playbook.
  * Por ahora solo hace logging condicional para depurar manualmente.

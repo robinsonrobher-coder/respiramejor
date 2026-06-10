@@ -1,4 +1,4 @@
-# robots.txt — Atmen · Dr. Robinson Robles, Neumólogo CDMX
+# robots.txt — Respira Mejor · Dr. Robinson Robles, Neumólogo CDMX
 # Ver módulo 05 del playbook médico
 
 User-agent: *
@@ -57,4 +57,4 @@ Allow: /
 User-agent: Bytespider
 Allow: /
 
-Sitemap: https://atmen.mx/sitemap.xml
+Sitemap: https://respiramejorcdmx.mx/sitemap.xml

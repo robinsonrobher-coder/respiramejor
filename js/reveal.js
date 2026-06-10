@@ -1,4 +1,4 @@
-/* Atmen — Reveal-on-scroll con IntersectionObserver. Sin GSAP. */
+/* Respira Mejor — Reveal-on-scroll con IntersectionObserver. Sin GSAP. */
 (function () {
   if (!('IntersectionObserver' in window)) {
     document.querySelectorAll('.reveal-up').forEach(function (el) {

@@ -1,4 +1,4 @@
-// Atmen — Agendar menu: dropdown (desktop) + bottom sheet (mobile)
+// Respira Mejor — Agendar menu: dropdown (desktop) + bottom sheet (mobile)
 (function () {
   const MQ_MOBILE = window.matchMedia('(max-width: 700px)');
 

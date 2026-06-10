@@ -1,4 +1,4 @@
-/* Atmen — site nav (mobile drawer + desktop inline)
+/* Respira Mejor — site nav (mobile drawer + desktop inline)
  * Toggles .navbar__menu.is-open via burger button.
  * Closes on: ESC, link click, click outside, viewport >= 900px.
  * Honors prefers-reduced-motion (CSS handles animation removal).

@@ -1,5 +1,5 @@
 /* =========================================================
-   Atmen — Premium effects (animated gradients, glass, bento,
+   Respira Mejor — Premium effects (animated gradients, glass, bento,
    marquee, counter, refined hover). Capa adicional sobre site.css.
    ========================================================= */
 
@@ -29,7 +29,7 @@ html { scroll-padding-top: 88px; }
   background:
     linear-gradient(180deg, #fbfeff 0%, #eef9fc 100%);
 }
-/* Signature: respiratory wave grid en fondo (firma única Atmen) */
+/* Signature: respiratory wave grid en fondo (firma única Respira Mejor) */
 .hero-pro::before {
   content: ""; position: absolute;
   inset: auto 0 0 0;
