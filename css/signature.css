@@ -56,6 +56,10 @@ h1 em.atmen-em::after {
     url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 600 400' preserveAspectRatio='none'><g fill='none' stroke='%2306a77d' stroke-width='1' opacity='0.22'><path d='M40 320 Q70 110 160 80 Q230 60 320 95 Q420 130 500 210 Q540 270 480 320 Q400 340 300 330 Q180 320 40 320 Z'/><path d='M60 310 Q90 150 180 120 Q250 105 330 135 Q410 165 480 230 Q510 270 460 310 Q380 325 290 320 Q170 315 60 310'/></g></svg>")
     no-repeat bottom right / 90% auto;
 }
+/* Respiración: la firma flujo-volumen "respira" sutilmente (opacidad).
+   El trazado inicial y el parallax ligero los aplica js/efectos.js. */
+@keyframes atmen-flow-breathe { 0%, 100% { opacity: 0.5; } 50% { opacity: 0.64; } }
+.atmen-flow-bg { animation: atmen-flow-breathe 7s ease-in-out 2.6s infinite; }
 
 /* --- 4. Breath pulse (icono ECG sutil) — mantenido del actual --- */
 .atmen-breath {
@@ -72,7 +76,8 @@ h1 em.atmen-em::after {
 /* --- Reduced motion: detener todas las animaciones signature --- */
 @media (prefers-reduced-motion: reduce) {
   .atmen-kicker::before,
-  .atmen-breath {
+  .atmen-breath,
+  .atmen-flow-bg {
     animation: none !important;
   }
 }

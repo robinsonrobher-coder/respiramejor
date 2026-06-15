@@ -2868,10 +2868,11 @@ button.dx-card { font: inherit; text-align: left; cursor: pointer; width: 100%; 
   box-shadow: 0 40px 90px -30px rgba(2,16,60,.6);
   background: #fff; color: var(--ink);
   overflow: hidden;
-  /* flex: el head queda fijo y el body scrollea; sin esto el body
-     desbordaba el dialog y overflow:hidden recortaba los CTA en móvil */
-  display: flex; flex-direction: column;
 }
+/* flex sólo al abrir: el head queda fijo y el body scrollea. Aplicarlo en la
+   base hacía que el <dialog> CERRADO (display:flex, origen autor) ganara al UA
+   dialog:not([open]){display:none} y se mostrara vacío dentro del flujo. */
+.dx-modal[open] { display: flex; flex-direction: column; }
 .dx-modal__head { flex: 0 0 auto; }
 .dx-modal::backdrop { background: rgba(3,12,40,.55); backdrop-filter: blur(3px); -webkit-backdrop-filter: blur(3px); }
 /* Bloqueo de scroll de fondo mientras la ficha está abierta (técnica robusta iOS):
