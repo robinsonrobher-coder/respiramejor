@@ -183,33 +183,6 @@
       ]
     },
     {
-      "slug": "post-covid",
-      "name": "Síndrome post-COVID",
-      "kind": "enfermedad",
-      "faqs": [
-        {
-          "q": "¿Qué es el síndrome post-COVID o COVID prolongado?",
-          "a": "Según la definición de consenso de la Organización Mundial de la Salud, la condición post-COVID-19 ocurre en personas con antecedente de infección por SARS-CoV-2, habitualmente unos tres meses después del inicio, con síntomas que duran al menos dos meses y que no se explican por otro diagnóstico. Es variable en su forma e impacto. Puede afectar la vida cotidiana.",
-          "refs": [13]
-        },
-        {
-          "q": "¿Qué síntomas puede causar y cuándo consultar?",
-          "a": "Se han descrito más de 200 síntomas en distintos órganos; entre los más frecuentes están la fatiga, la falta de aire y la dificultad de concentración, que pueden fluctuar o reaparecer con el tiempo. Conviene consultar si los síntomas persisten más allá de la recuperación inicial y limitan su funcionamiento diario. Una valoración ayuda a descartar otras causas.",
-          "refs": [13, 14]
-        },
-        {
-          "q": "¿Cómo se diagnostica y maneja el post-COVID?",
-          "a": "Hasta ahora no existe una prueba única que confirme el post-COVID, por lo que el diagnóstico es clínico y requiere descartar otras causas de los síntomas. El manejo es individualizado y multidisciplinario, orientado a aliviar los síntomas y apoyar la recuperación funcional. La investigación sigue avanzando para definir mejores estrategias.",
-          "refs": [13, 14]
-        },
-        {
-          "q": "¿Cómo puede ayudarme el Dr. Robinson Robles si tengo síntomas post-COVID?",
-          "a": "El Dr. Robles, neumólogo con formación en el INER y Médica Sur, evalúa los síntomas respiratorios persistentes tras la COVID-19, realiza los estudios pertinentes para descartar otras causas y coordina un plan de seguimiento y rehabilitación según cada caso. El enfoque busca apoyar su recuperación. Esta información es educativa y no reemplaza la consulta médica.",
-          "refs": [13]
-        }
-      ]
-    },
-    {
       "slug": "cancer-pulmon",
       "name": "Cáncer de pulmón",
       "kind": "enfermedad",
@@ -409,24 +382,6 @@
       "pmid": "37142273",
       "doi": "10.1002/14651858.CD006103.pub8",
       "url": "https://pubmed.ncbi.nlm.nih.gov/37142273/"
-    },
-    {
-      "id": 13,
-      "authors": "Soriano JB, Murthy S, Marshall JC, Relan P, Diaz JV; WHO Clinical Case Definition Working Group on Post-COVID-19 Condition.",
-      "title": "A clinical case definition of post-COVID-19 condition by a Delphi consensus.",
-      "source": "Lancet Infect Dis. 2022;22(4):e102-e107.",
-      "pmid": "34951953",
-      "doi": "10.1016/S1473-3099(21)00703-9",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/34951953/"
-    },
-    {
-      "id": 14,
-      "authors": "Davis HE, McCorkell L, Vogel JM, Topol EJ.",
-      "title": "Long COVID: major findings, mechanisms and recommendations.",
-      "source": "Nat Rev Microbiol. 2023;21(3):133-146.",
-      "pmid": "36639608",
-      "doi": "10.1038/s41579-022-00846-2",
-      "url": "https://pubmed.ncbi.nlm.nih.gov/36639608/"
     },
     {
       "id": 15,

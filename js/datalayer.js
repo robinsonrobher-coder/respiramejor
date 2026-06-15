@@ -17,13 +17,20 @@
     return p.replace(/^\/|\/$/g, '').replace(/\//g, '-');
   }
 
+  // Reenvía a GA4 (gtag) si el tag está cargado; si no, solo deja el evento en dataLayer.
+  function ga(name, params) {
+    if (typeof window.gtag === 'function') window.gtag('event', name, params);
+  }
+
   function pushCta(type, label) {
+    var lbl = (label || '').substring(0, 60).trim();
     window.dataLayer.push({
       event: 'cta_click',
       cta_type: type,
-      cta_label: (label || '').substring(0, 60).trim(),
+      cta_label: lbl,
       cta_page: pageSlug()
     });
+    ga('cta_click', { cta_type: type, cta_label: lbl, cta_page: pageSlug() });
   }
 
   document.addEventListener('click', function (e) {
@@ -54,6 +61,7 @@
       cta_label: summaryText.substring(0, 80),
       cta_page: pageSlug()
     });
+    ga('faq_open', { cta_type: 'accordion', cta_label: summaryText.substring(0, 80), cta_page: pageSlug() });
   }, true);
 
   var marks = [25, 50, 75, 100];
@@ -73,6 +81,7 @@
           cta_label: String(m),
           cta_page: pageSlug()
         });
+        ga('scroll_depth', { cta_type: 'scroll', cta_label: String(m), cta_page: pageSlug() });
       }
     });
     ticking = false;

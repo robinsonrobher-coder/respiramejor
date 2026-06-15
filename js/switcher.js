@@ -27,13 +27,29 @@
     return;
   }
 
-  const head = document.getElementById('dxModalHead');
   const ic = document.getElementById('dxModalIc');
   const tag = document.getElementById('dxModalTag');
   const title = document.getElementById('dxModalTitle');
   const content = document.getElementById('dxModalContent');
   const moreLink = document.getElementById('dxMoreLink');
+  const body = modal.querySelector('.dx-modal__body');
   let lastFocus = null;
+
+  // Bloqueo de scroll de fondo mientras la ficha está abierta. Era la causa real
+  // del "se traba / se siente roto" al hacer scroll en móvil: la página se
+  // desplazaba detrás del diálogo fijo y el backdrop-filter repintaba en cada frame.
+  let scrollLockY = 0;
+  function lockScroll() {
+    scrollLockY = window.scrollY || document.documentElement.scrollTop || 0;
+    document.body.style.top = '-' + scrollLockY + 'px';
+    document.body.classList.add('dx-modal-open');
+  }
+  function unlockScroll() {
+    if (!document.body.classList.contains('dx-modal-open')) return;
+    document.body.classList.remove('dx-modal-open');
+    document.body.style.top = '';
+    window.scrollTo(0, scrollLockY);
+  }
 
   function open(slug) {
     const f = fichas[slug];
@@ -49,9 +65,11 @@
     if (cp) modal.style.setProperty('--cp', cp); else modal.style.removeProperty('--cp');
     content.innerHTML = (lead ? lead.outerHTML : '') + (points ? points.outerHTML : '');
     if (moreLink) moreLink.href = 'preguntas-frecuentes/index.html#' + slug;
+    if (body) body.scrollTop = 0; // cada ficha arranca desde arriba
     if (!modal.open) {
       lastFocus = document.activeElement;
       modal.showModal();
+      lockScroll();
     }
     const closeBtn = modal.querySelector('[data-dx-close]');
     if (closeBtn) closeBtn.focus();
@@ -60,10 +78,14 @@
   cards.forEach((c) => c.addEventListener('click', () => open(c.dataset.dx)));
   modal.querySelectorAll('[data-dx-close]').forEach((b) => b.addEventListener('click', () => modal.close()));
 
-  // Cerrar al hacer clic en el backdrop (fuera del cuadro)
-  modal.addEventListener('click', (e) => {
-    const r = modal.getBoundingClientRect();
-    if (e.clientX < r.left || e.clientX > r.right || e.clientY < r.top || e.clientY > r.bottom) modal.close();
+  // Cerrar al tocar el backdrop (el área del propio <dialog>, fuera del cuadro).
+  // e.target === modal es más fiable en táctil que el cálculo por coordenadas.
+  modal.addEventListener('click', (e) => { if (e.target === modal) modal.close(); });
+
+  // Escape (evento 'cancel') y cualquier cierre: restaurar scroll y foco.
+  modal.addEventListener('cancel', (e) => { e.preventDefault(); modal.close(); });
+  modal.addEventListener('close', () => {
+    unlockScroll();
+    if (lastFocus && lastFocus.focus) lastFocus.focus();
   });
-  modal.addEventListener('close', () => { if (lastFocus && lastFocus.focus) lastFocus.focus(); });
 })();

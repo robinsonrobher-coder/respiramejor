@@ -257,7 +257,7 @@ Sustituir el bloque hero actual + portrait-pro por:
 
     <p class="hero-lede">
       Soy el <b>Dr. Robinson Robles</b>. Atiendo asma, EPOC, apnea del sueño,
-      tabaquismo y secuelas respiratorias post-COVID con la misma evidencia
+      tabaquismo y cáncer pulmonar con la misma evidencia
       que aplico como investigador adscrito a la Clínica de Tabaquismo y EPOC
       del INER.
     </p>
@@ -321,7 +321,6 @@ Sustituir el bloque hero actual + portrait-pro por:
       <li class="condition-pills__hot">EPOC</li>
       <li>Apnea</li>
       <li>Tabaquismo</li>
-      <li>Post-COVID</li>
       <li>Disnea</li>
       <li>Tos crónica</li>
     </ul>
@@ -1007,8 +1006,8 @@ Pegar:
 
     <!-- Repetir mismo patrón para los 8 restantes: -->
     <!-- 03 Tos crónica, 04 Disnea, 05 Apnea del sueño, 06 Tabaquismo,
-         07 Secuelas post-COVID, 08 Cáncer de pulmón, 09 Derrame pleural,
-         10 Broncoscopia diagnóstica -->
+         07 Cáncer de pulmón, 08 Derrame pleural,
+         09 Broncoscopia diagnóstica -->
   </div>
 </section>
 ```

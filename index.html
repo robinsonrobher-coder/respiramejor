@@ -2,6 +2,14 @@
 <html lang="es-MX">
 <head>
   <meta charset="UTF-8">
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-ZT5Y3TRZ6E"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-ZT5Y3TRZ6E');
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
 
   <title>Neumólogo en CDMX | Dr. Robinson Robles — Respira Mejor</title>
@@ -130,7 +138,8 @@
         "hasCredential": [
           { "@type": "EducationalOccupationalCredential", "name": "Cédula Profesional de Médico Cirujano", "credentialCategory": "license", "identifier": "10431658", "recognizedBy": { "@type": "GovernmentOrganization", "name": "Dirección General de Profesiones, Secretaría de Educación Pública (México)" } },
           { "@type": "EducationalOccupationalCredential", "name": "Cédula de Especialidad en Neumología", "credentialCategory": "license", "identifier": "12440475", "recognizedBy": { "@type": "GovernmentOrganization", "name": "Dirección General de Profesiones, Secretaría de Educación Pública (México)" } },
-          { "@type": "EducationalOccupationalCredential", "name": "Certificación vigente del Consejo Nacional de Neumología y Cirugía de Tórax", "credentialCategory": "certification", "identifier": "1509", "validUntil": "2031-12-31", "recognizedBy": { "@type": "Organization", "name": "Consejo Nacional de Neumología y Cirugía de Tórax", "url": "https://consejonacionaldeneumologia.org/" } }
+          { "@type": "EducationalOccupationalCredential", "name": "Certificación vigente del Consejo Nacional de Neumología y Cirugía de Tórax", "credentialCategory": "certification", "identifier": "1509", "validUntil": "2031-12-31", "recognizedBy": { "@type": "Organization", "name": "Consejo Nacional de Neumología y Cirugía de Tórax", "url": "https://consejonacionaldeneumologia.org/" } },
+          { "@type": "EducationalOccupationalCredential", "name": "Maestría en Ciencias", "credentialCategory": "degree", "educationalLevel": "Postgraduate", "identifier": [ { "@type": "PropertyValue", "name": "Cédula profesional", "value": "15282188" }, { "@type": "PropertyValue", "name": "Número de Registro Universitario", "value": "PN21623" } ], "recognizedBy": { "@type": "GovernmentOrganization", "name": "Dirección General de Profesiones, Secretaría de Educación Pública (México)" } }
         ],
         "sameAs": [
           "https://www.doctoralia.com.mx/robinson-robles/neumologo/ciudad-de-mexico",
@@ -246,10 +255,12 @@
         </h1>
 
         <p class="hero-lede">
-          Soy el <b>Dr. Robinson Robles</b>, neumólogo del <b>INER</b> con consulta en
-          <b>Médica Sur</b>. Te acompaño con <span class="hl">asma, EPOC, apnea del sueño</span>
-          y cáncer pulmonar con un diagnóstico claro y un trato cercano, para que vuelvas
-          a respirar con tranquilidad.
+          Cuando respirar se vuelve difícil, la incertidumbre y el miedo afectan tu día a día.
+          Como neumólogo, mi prioridad es darte la <b>certeza de un diagnóstico preciso</b> y
+          acompañarte paso a paso para que te sientas mejor. Soy el <b>Dr. Robinson Robles</b>
+          (<b>INER</b> / <b>Médica Sur</b>) y te ayudo a recuperar tu calidad de vida frente a
+          enfermedades como <span class="hl">el tabaquismo, asma, la EPOC, fibrosis pulmonar,
+          la apnea del sueño</span> y el cáncer pulmonar. Volverás a respirar con tranquilidad.
         </p>
 
         <ul class="hero-tags" aria-label="Padecimientos que trato">
@@ -329,9 +340,9 @@
       <div class="container">
         <div class="switcher-section__head reveal-up">
           <h2 id="switcher-title" class="switcher-section__h headline">
-            Cada padecimiento es <em>una historia,</em> no un cuadro.
+            ¿Reconoces alguno de <em>estos síntomas?</em>
           </h2>
-          <p>Estos son los motivos de consulta y estudios diagnósticos más frecuentes en mi práctica. Todos se atienden con base en guías internacionales —GINA (asma), GOLD (EPOC), AASM (sueño) y ATS (respiratorias)—.</p>
+          <p>Si algo de esto te suena familiar, puedo ayudarte. Toca cualquier padecimiento para ver sus síntomas, cómo se diagnostica y qué esperar. Todo se atiende con base en guías internacionales —GINA (asma), GOLD (EPOC), AASM (sueño) y ATS (respiratorias)—.</p>
         </div>
 
         <div class="dx-grid">
@@ -441,7 +452,9 @@
 
         <dialog class="dx-modal" id="dxModal" aria-labelledby="dxModalTitle">
           <div class="dx-modal__head" id="dxModalHead">
-            <button type="button" class="dx-modal__close" data-dx-close aria-label="Cerrar ficha">&times;</button>
+            <button type="button" class="dx-modal__close" data-dx-close aria-label="Cerrar ficha">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
+            </button>
             <span class="dx-modal__ic" id="dxModalIc" aria-hidden="true"></span>
             <span class="dx-modal__tag" id="dxModalTag"></span>
             <h3 class="dx-modal__title" id="dxModalTitle"></h3>
@@ -511,6 +524,24 @@
           <article class="service-card">
             <div class="service-card__head">
               <div class="service-card__icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M3 8h11a3 3 0 1 0-3-3"/><path d="M3 13h14a3 3 0 1 1-3 3"/><path d="M3 18h7"/></svg>
+              </div>
+              <div>
+                <span class="service-card__eyebrow">Inflamación de la vía aérea</span>
+                <h3 class="service-card__title">FeNO (óxido nítrico exhalado)</h3>
+              </div>
+            </div>
+            <p class="service-card__desc">Mide la inflamación de los bronquios con un soplido suave en un sensor. Confirma el asma de tipo alérgico y muestra si los inhaladores están haciendo efecto. Sin pinchazos ni radiación.</p>
+            <ul class="service-card__bullets">
+              <li>Detecta inflamación que la espirometría no ve</li>
+              <li>Orienta la dosis del inhalador (corticoide)</li>
+              <li>Resultado en minutos, soplando suave</li>
+            </ul>
+          </article>
+
+          <article class="service-card">
+            <div class="service-card__head">
+              <div class="service-card__icon" aria-hidden="true">
                 <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 18a8 8 0 110-16 8 8 0 010 16zm-1-12h2v3h3v2h-3v3h-2v-3H8v-2h3z"/></svg>
               </div>
               <div>
@@ -531,6 +562,63 @@
         <p class="reveal-up" style="text-align:center; margin-top: 28px; color: var(--ink-muted); font-size: .9rem; max-width: 60ch; margin-inline: auto;">
           Para confirmar disponibilidad, requisitos de preparación y cobertura por seguro, escríbeme por WhatsApp antes de tu cita.
         </p>
+      </div>
+    </section>
+
+    <!-- ===== TRATAMIENTOS Y SERVICIOS ===== -->
+    <section class="section care-section" id="tratamientos" aria-labelledby="care-title">
+      <div class="container">
+        <div class="section-head reveal-up">
+          <span class="badge-pill"><span class="pulse" aria-hidden="true"></span>Tratamientos y servicios</span>
+          <h2 id="care-title">Del diagnóstico al <em>tratamiento,</em> en un mismo lugar.</h2>
+          <p>Cuando ya está claro qué tienes, el plan se pone en marcha: consulta, procedimientos y tratamiento con seguimiento cercano, sin enviarte de un lado a otro.</p>
+        </div>
+
+        <div class="care-grid">
+
+          <article class="care-group care-group--consulta">
+            <header class="care-group__head">
+              <span class="care-group__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M21 11.5a8.38 8.38 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.38 8.38 0 0 1-3.8-.9L3 21l1.9-5.7a8.38 8.38 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.38 8.38 0 0 1 3.8-.9h.5a8.48 8.48 0 0 1 8 8v.5Z"/></svg></span>
+              <h3 class="care-group__title">Consulta y valoración</h3>
+            </header>
+            <ul class="care-list">
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Consulta de neumología</b><span>Valoración completa que termina en un plan claro el mismo día.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Teleconsulta (español e inglés)</b><span>Seguimiento de enfermedades crónicas y segunda opinión sin moverte de casa.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Interpretación de estudios</b><span>Reviso espirometrías, tomografías y laboratorios que ya traes.</span></div></li>
+            </ul>
+          </article>
+
+          <article class="care-group care-group--proc">
+            <header class="care-group__head">
+              <span class="care-group__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="m18 2 4 4"/><path d="m17 7 3-3"/><path d="M19 9 8.7 19.3a2.41 2.41 0 0 1-3.4 0l-.6-.6a2.41 2.41 0 0 1 0-3.4L15 5"/><path d="m9 11 2 2"/><path d="m13 7 2 2"/><path d="m5 16-3 3"/></svg></span>
+              <h3 class="care-group__title">Procedimientos</h3>
+            </header>
+            <ul class="care-list">
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Toracocentesis</b><span>Drenaje del líquido alrededor del pulmón, guiado por ultrasonido.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Broncoscopia diagnóstica</b><span>Exploración de la vía aérea con toma de muestra y sedación, sin hospitalización.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Ultrasonido a pie de cama</b><span>Imagen sin radiación para valorar pleura y pulmón en la misma cita.</span></div></li>
+            </ul>
+          </article>
+
+          <article class="care-group care-group--tx">
+            <header class="care-group__head">
+              <span class="care-group__ic" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"/></svg></span>
+              <h3 class="care-group__title">Tratamientos</h3>
+            </header>
+            <ul class="care-list">
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Plan para dejar de fumar</b><span>Medicamento y apoyo conductual (Clínica de Tabaquismo del INER).</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Control del asma</b><span>Plan escalonado y técnica de inhalador, con base en la guía GINA.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>Manejo de la EPOC</b><span>Inhaladores a tu medida y rehabilitación respiratoria, con base en GOLD.</span></div></li>
+              <li class="care-item"><span class="care-item__dot" aria-hidden="true"></span><div class="care-item__txt"><b>CPAP para la apnea</b><span>Ajuste del equipo a tu medida y seguimiento de cómo lo usas.</span></div></li>
+            </ul>
+          </article>
+
+        </div>
+
+        <div class="care-cta reveal-up">
+          <button type="button" class="btn btn--primary btn-pro" data-agendar-open aria-haspopup="dialog">Agendar consulta</button>
+          <a class="btn btn--ghost" href="preguntas-frecuentes/index.html">Ver preguntas frecuentes</a>
+        </div>
       </div>
     </section>
 
@@ -1247,5 +1335,35 @@
   <script defer src="./js/agendar-modal.js"></script>
   <script defer src="./js/switcher.js"></script>
   <script defer src="./js/testimonials-wall.js"></script>
+
+  <!-- Motion (motion.dev) — sucesor en JS vanilla de Framer Motion.
+       Realza la entrada escalonada de "Tratamientos y servicios".
+       Las tarjetas quedan visibles por defecto si el CDN no carga o con motion reducido. -->
+  <script type="module">
+    try {
+      const reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+      const grid = document.querySelector('.care-grid');
+      const groups = grid ? grid.querySelectorAll('.care-group') : [];
+      if (grid && groups.length && !reduce && 'IntersectionObserver' in window) {
+        const { animate, stagger } = await import('https://cdn.jsdelivr.net/npm/motion@12.40.0/+esm');
+        groups.forEach((g) => { g.style.opacity = '0'; g.style.transform = 'translateY(20px)'; });
+        const io = new IntersectionObserver((entries) => {
+          entries.forEach((entry) => {
+            if (!entry.isIntersecting) return;
+            io.disconnect();
+            animate(
+              groups,
+              { opacity: [0, 1], transform: ['translateY(20px)', 'translateY(0px)'] },
+              { duration: 0.55, delay: stagger(0.09), ease: [0.22, 1, 0.36, 1] }
+            );
+          });
+        }, { rootMargin: '0px 0px -10% 0px' });
+        io.observe(grid);
+      }
+    } catch (e) {
+      // CDN no disponible: garantiza que las tarjetas queden visibles.
+      document.querySelectorAll('.care-group').forEach((g) => { g.style.opacity = ''; g.style.transform = ''; });
+    }
+  </script>
 </body>
 </html>
