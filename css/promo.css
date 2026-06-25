@@ -363,3 +363,48 @@
 .offer-card__list--checks li::before {
   content: "✓"; color: var(--leaf-deep); font-weight: 800; flex: 0 0 auto; line-height: 1.45;
 }
+
+/* === Identidad del doctor en el hero (confianza / E-E-A-T) === */
+.promo-doctor {
+  display: flex; align-items: center; gap: 12px;
+  margin-top: 18px; padding-top: 18px;
+  border-top: 1px solid var(--line-soft);
+}
+.promo-doctor__photo {
+  width: 56px; height: 56px; border-radius: 50%;
+  object-fit: cover; object-position: 50% 16%;
+  border: 2px solid #fff; box-shadow: 0 8px 18px -8px rgba(2,62,138,.45);
+  flex: 0 0 auto;
+}
+.promo-doctor__id { margin: 0; line-height: 1.32; }
+.promo-doctor__id b { display: block; color: var(--ink); font-weight: 700; font-size: 14.5px; }
+.promo-doctor__id span { font-size: 12.5px; color: var(--ink-muted); }
+
+/* === Franja de métricas (prueba social cuantitativa) === */
+.promo-stats {
+  background: linear-gradient(180deg, #fff 0%, var(--cloud) 100%);
+  border-top: 1px solid var(--line-soft); border-bottom: 1px solid var(--line-soft);
+  padding: 22px;
+}
+.promo-stats__inner {
+  max-width: 1080px; margin-inline: auto;
+  display: grid; grid-template-columns: repeat(2, 1fr); gap: 18px 12px;
+  text-align: center;
+}
+@media (min-width: 720px) { .promo-stats__inner { grid-template-columns: repeat(4, 1fr); } }
+.promo-stats__cell b {
+  display: block; font-family: var(--font-display); font-weight: 800;
+  font-size: clamp(26px, 6vw, 34px); line-height: 1; color: var(--ocean);
+  letter-spacing: -.03em; font-feature-settings: "tnum";
+}
+.promo-stats__cell b small { font-size: .5em; font-weight: 700; color: var(--sea); }
+.promo-stats__cell span { display: block; margin-top: 7px; font-size: 12.5px; color: var(--ink-muted); line-height: 1.35; }
+
+/* === Sticky CTA: botón WhatsApp secundario === */
+.sticky-cta__wa {
+  flex: 0 0 auto; width: 48px; height: 48px; border-radius: 12px;
+  display: grid; place-items: center;
+  background: #25d366; color: #fff;
+  box-shadow: 0 8px 18px -8px rgba(37,211,102,.7);
+}
+.sticky-cta__wa svg { width: 24px; height: 24px; }

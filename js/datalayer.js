@@ -1,12 +1,23 @@
-/* Respira Mejor — dataLayer stub.
- * GTM aún no instalado (no tenemos GTM_ID). Cuando se instale, este archivo
- * se actualiza para empujar eventos reales según módulo 13 del playbook.
- * Por ahora solo hace logging condicional para depurar manualmente.
+/* Respira Mejor — capa de dataLayer para GTM (contenedor GTM-M7STX283, ya instalado).
+ * Empuja al dataLayer en cada interacción clave; GTM escucha estos eventos,
+ * crea los tags de GA4 y desde GA4 se importan como conversiones a Google Ads.
  *
- * Eventos esquema fijo (cuando se conecte GTM):
- *   cta_click  → cta_type ∈ {whatsapp, calcom, phone, email}
- *   faq_open   → cta_type = accordion
+ * Eventos GENÉRICOS (para análisis):
+ *   cta_click    → cta_type ∈ {whatsapp, calcom, phone, email}
+ *   faq_open     → cta_type = accordion
  *   scroll_depth → cta_type = scroll, cta_label ∈ {25,50,75,100}
+ *   agenda_modal_open → source = data-cta del disparador (en agendar-modal.js)
+ *
+ * Eventos SEMÁNTICOS (mapeo 1:1 con las acciones de conversión de Google Ads,
+ * ver docs/campana-google-ads-dr-robinson.md §5). Úsalos como disparadores en GTM:
+ *   agendar_cita    → clic a Cal.com   (Book appointment · PRIMARIA)
+ *   clic_whatsapp   → clic a WhatsApp  (Contact · PRIMARIA)
+ *   llamada         → clic a tel:      (Contact/Phone · SECUNDARIA)
+ *   contacto_email  → clic a mailto:   (Contact · SECUNDARIA)
+ *
+ * NOTA: el clic a Cal.com mide la INTENCIÓN de reserva (abre Cal.com en otra
+ * pestaña), no la reserva confirmada. Para contar reservas reales, activa el
+ * seguimiento de conversiones dentro de Cal.com (GA4/redirección de gracias).
  */
 (function () {
   window.dataLayer = window.dataLayer || [];
@@ -22,15 +33,35 @@
   // Sin envío directo a gtag para evitar doble conteo; GTM escucha estos eventos del dataLayer.
   function ga(name, params) { /* no-op: gestionado por GTM */ }
 
+  // Mapeo de tipo de CTA → evento semántico para Google Ads (1:1 con el doc de campaña).
+  var SEMANTIC_EVENT = {
+    whatsapp: 'clic_whatsapp',
+    calcom: 'agendar_cita',
+    phone: 'llamada',
+    email: 'contacto_email'
+  };
+
   function pushCta(type, label) {
     var lbl = (label || '').substring(0, 60).trim();
+    var slug = pageSlug();
+    // Evento genérico (análisis).
     window.dataLayer.push({
       event: 'cta_click',
       cta_type: type,
       cta_label: lbl,
-      cta_page: pageSlug()
+      cta_page: slug
     });
-    ga('cta_click', { cta_type: type, cta_label: lbl, cta_page: pageSlug() });
+    // Evento semántico (conversión Ads): nombre estable, fácil de disparar en GTM.
+    var semantic = SEMANTIC_EVENT[type];
+    if (semantic) {
+      window.dataLayer.push({
+        event: semantic,
+        cta_type: type,
+        cta_label: lbl,
+        cta_page: slug
+      });
+    }
+    ga('cta_click', { cta_type: type, cta_label: lbl, cta_page: slug });
   }
 
   document.addEventListener('click', function (e) {
